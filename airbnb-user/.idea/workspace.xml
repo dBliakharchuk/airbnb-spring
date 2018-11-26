@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="99e7851d-6f43-4731-acd7-834f2071e584" name="Default" comment="business model added, model changed">
-      <change afterPath="$PROJECT_DIR$/src/main/java/airbnb/model/UserPublicInfo.java" afterDir="false" />
+    <list default="true" id="99e7851d-6f43-4731-acd7-834f2071e584" name="Default" comment="working api endpoint with basic auth">
+      <change afterPath="$PROJECT_DIR$/src/main/java/airbnb/api/TestApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airbnb/database/DataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airbnb/database/DataAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airbnb/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airbnb/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airbnb/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airbnb/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -168,42 +169,80 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="14" />
+          <entry key="java" value="16" />
           <entry key="json" value="1" />
-          <entry key="xml" value="1" />
+          <entry key="jsp" value="4" />
+          <entry key="properties" value="2" />
+          <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="14" />
+          <entry key="JAVA" value="16" />
           <entry key="JSON" value="1" />
-          <entry key="XML" value="1" />
+          <entry key="JSP" value="4" />
+          <entry key="Properties" value="2" />
+          <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2564" />
-          <entry key="xml" value="2" />
+          <entry key="java" value="2634" />
+          <entry key="properties" value="14" />
+          <entry key="txt" value="38" />
+          <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2564" />
-          <entry key="XML" value="2" />
+          <entry key="JAVA" value="2634" />
+          <entry key="PLAIN_TEXT" value="38" />
+          <entry key="Properties" value="14" />
+          <entry key="XML" value="6" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1720">
-              <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+            <state relative-caret-position="1700">
+              <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/TestApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -241,9 +280,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/model/InstructorAccount.java" />
-        <option value="$PROJECT_DIR$/src/main/java/api/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logic/AccountLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/logic/LessonLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/AccountApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/api/LessonApi.java" />
@@ -282,16 +318,19 @@
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/MessagePK.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/ReservationPK.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/ApartmentPK.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/Apartment.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/Reservation.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/Message.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/repositories/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/database/DataAccess.java" />
-        <option value="$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/UserPublicInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/test/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/airbnb/api/TestApi.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       </list>
     </option>
   </component>
@@ -671,27 +710,7 @@
               <item name="airbnb-user" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="airbnb" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="airbnb-user" type="b2602c69:ProjectViewProjectNode" />
-              <item name="airbnb-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="airbnb" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="airbnb-user" type="b2602c69:ProjectViewProjectNode" />
-              <item name="airbnb-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="airbnb" type="462c0819:PsiDirectoryNode" />
-              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -705,7 +724,7 @@
     <property name="SearchEverywhereHistoryKey" value="incorrect&#9;PSI&#9;JAVA://org.springframework.dao.IncorrectResultSizeDataAccessException&#10;instru&#9;FILE&#9;file://C:/Users/Mateusz/IdeaProjects/signify-back/src/main/java/model/InstructorAccount.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543260261031" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543263236164" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -713,6 +732,13 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mateusz\IdeaProjects\airbnb-spring\airbnb-user\src\main\webapp" />
+      <recent name="C:\Users\Mateusz\IdeaProjects\signify-back\src\main\resources" />
+      <recent name="C:\Users\Mateusz\IdeaProjects\signify-back\src\main\resources\config" />
+      <recent name="C:\Users\Mateusz\IdeaProjects\signify-back\src\main\resources\templates" />
+      <recent name="C:\Users\Mateusz\IdeaProjects\signify-back" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
@@ -720,13 +746,6 @@
       <recent name="C:\Users\Mateusz\IdeaProjects\airbnb-user\src\main\java\airbnb\model" />
       <recent name="C:\Users\Mateusz\IdeaProjects\airbnb-user\src\main\resources\static" />
       <recent name="C:\Users\Mateusz\IdeaProjects\signify\src\main\resources\react" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mateusz\IdeaProjects\signify-back\src\main\resources" />
-      <recent name="C:\Users\Mateusz\IdeaProjects\signify-back\src\main\resources\config" />
-      <recent name="C:\Users\Mateusz\IdeaProjects\signify-back\src\main\resources\templates" />
-      <recent name="C:\Users\Mateusz\IdeaProjects\signify-back" />
-      <recent name="C:\Users\Mateusz\IdeaProjects\signify-back\src\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -859,7 +878,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539620122972</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="working api endpoint with basic auth">
+      <created>1543260659646</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1543260659646</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -869,7 +895,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.2553305" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" sideWeight="0.5010846" side_tool="true" weight="0.23400854" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -878,8 +904,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.34924078" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.39804772" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34924078" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.39804772" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -931,6 +957,9 @@
       <window_info anchor="right" id="Database" order="9" />
     </layout-to-restore>
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.jsp" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -951,12 +980,11 @@
     <MESSAGE value="simple react account form" />
     <MESSAGE value="missing frontend src added" />
     <MESSAGE value="business model added, model changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="business model added, model changed" />
+    <MESSAGE value="working api endpoint with basic auth" />
+    <option name="LAST_COMMIT_MESSAGE" value="working api endpoint with basic auth" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/repositories/LessonRepository.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/model/account/InstructorAccount.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -1047,20 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="112" selection-start-line="5" selection-start-column="112" selection-end-line="5" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="63" column="7" lean-forward="true" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1184,13 +1198,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-613">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1720">
-          <caret line="86" column="50" selection-start-line="86" selection-start-column="50" selection-end-line="86" selection-end-column="50" />
+        <state relative-caret-position="1700">
+          <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/TestApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
         </state>
       </provider>
     </entry>

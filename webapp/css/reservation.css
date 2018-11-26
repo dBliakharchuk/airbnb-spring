@@ -1,0 +1,48 @@
+#reservation-box{
+    padding-right:20px;
+    padding-top:20px;
+    padding-bottom:80px;
+    padding-left:40px;
+    font-size:17px;
+}
+#reservation-header{
+background-color: #ff751a;
+padding:13px;
+color:white;
+font-size:17px;
+font-weight:bold;
+}
+#reservation-container{
+	padding-top:11px;
+	padding-bottom:20px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+    background-color: white;
+    color:black;
+}
+#reservation-price{
+	color:#ff751a;
+	font-size:30px;
+	font-weight:bold;
+	padding-top:25px;
+}
+.reservation-field-title{
+	color:#a6a6a6;
+	margin-top:50px;
+}
+.date-box{
+	float:left;
+	margin-right:30px;
+	margin-top:10px;
+	width: 25%;
+}
+.reservation-info-field{
+	margin-top:10px;
+}
+.reservation-button{
+	margin-left:5%;
+	width: 41%;	
+	float:left;
+}

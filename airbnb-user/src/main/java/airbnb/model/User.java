@@ -1,7 +1,5 @@
 package airbnb.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,7 +11,6 @@ import java.util.List;
 
 
 @Entity
-@JsonIgnoreProperties("password")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private static final String adminLogin = "admin";

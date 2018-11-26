@@ -5,9 +5,11 @@ import airbnb.model.User;
 import airbnb.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.sql.DataSource;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/user")
@@ -26,4 +28,10 @@ public class UserApi {
     public Iterable<User> test() {
         return users.findAll();
     }
+
+    @RequestMapping(path = "/user")
+    public Optional<User> getUserByEmail(@RequestParam("email") String email) {
+        return users.findById(email);
+    }
+
 }

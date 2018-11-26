@@ -657,25 +657,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.run back">
+  <component name="RunManager">
     <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="MAIN_CLASS_NAME" value="airbnb.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="run back" type="Application" factoryName="Application">
+    <configuration name="run" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="airbnb.Application" />
-      <module name="airbnb" />
+      <module name="user" />
       <method v="2">
         <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="run front" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="airbnb.Application" />
-      <module name="airbnb" />
-      <method v="2">
-        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -692,10 +685,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.run front" />
-      <item itemvalue="Application.run back" />
-    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />

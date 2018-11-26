@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="airbnb" />
         <module name="signify-back" />
+        <module name="user" />
       </profile>
     </annotationProcessing>
   </component>

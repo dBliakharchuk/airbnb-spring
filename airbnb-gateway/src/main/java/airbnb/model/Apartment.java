@@ -2,39 +2,26 @@ package airbnb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 
-@Entity
 @JsonIgnoreProperties("host")
 public class Apartment implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@EmbeddedId
 	private ApartmentPK id;
-	
-	@Column(name="beds_adult")
 	private int bedsAdult;
-	@Column(name="beds_child")
 	private int bedsChild;
 	private String country;
 	private String description;
 	private String name;
-	@Lob
 	private byte[] picture;
 	private double price;
-	@Enumerated(EnumType.STRING)
 	private ApartmentType type;
-
-	@ManyToOne
-	@JoinColumn(name="host", insertable=false, updatable=false)
 	private User host;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="apartment")
 	private List<Reservation> reservations;
 
 	public Apartment() {

@@ -1,17 +1,12 @@
 package airbnb.model;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
-@Embeddable
 public class MessagePK implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String message;
-	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
 	private String sender;
 	private String receiver;

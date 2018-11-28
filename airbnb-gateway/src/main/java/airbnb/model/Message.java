@@ -2,29 +2,17 @@ package airbnb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.io.Serializable;
 import java.util.Date;
 
 
-@Entity
 @JsonIgnoreProperties({"sender", "receiver"})
 public class Message implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@EmbeddedId
 	private MessagePK id;
 	private boolean isUnread;
-
-	@ManyToOne
-	@JoinColumn(name="sender", insertable=false, updatable=false)
 	private User sender;
-
-	@ManyToOne
-	@JoinColumn(name="receiver", insertable=false, updatable=false)
 	private User receiver;
 
 	public Message() {

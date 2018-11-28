@@ -1,0 +1,12 @@
+#payment-box{
+    padding-right:40px;
+    padding-top:20px;
+    padding-bottom:260px;
+    padding-left:40px;
+    font-size:17px;
+}
+.payment-button{
+	margin-left:6%;
+	width: 41%;	
+	float:left;
+}

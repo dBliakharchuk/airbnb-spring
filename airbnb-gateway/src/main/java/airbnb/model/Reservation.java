@@ -2,31 +2,16 @@ package airbnb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 
-@Entity
 @JsonIgnoreProperties({"apartment", "user"})
 public class Reservation implements Serializable, Comparable<Reservation> {
 	private static final long serialVersionUID = 1L;
 
-	@EmbeddedId
 	private ReservationPK id;
-
-	@ManyToOne
-	@JoinColumns({
-		@JoinColumn(name="apartmentBuildingNumber", referencedColumnName="buildingNumber", insertable=false, updatable=false),
-		@JoinColumn(name="apartmentCity", referencedColumnName="city", insertable=false, updatable=false),
-		@JoinColumn(name="apartmentFlatNumber", referencedColumnName="flatNumber", insertable=false, updatable=false),
-		@JoinColumn(name="apartmentHost", referencedColumnName="host", insertable=false, updatable=false),
-		@JoinColumn(name="apartmentStreet", referencedColumnName="street", insertable=false, updatable=false)
-		})
 	private Apartment apartment;
-
-	@ManyToOne
-	@JoinColumn(name="userEmail", insertable=false, updatable=false)
 	private User user;
 
 	public Reservation() {

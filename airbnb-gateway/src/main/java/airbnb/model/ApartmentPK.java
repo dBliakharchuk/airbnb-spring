@@ -1,10 +1,8 @@
 package airbnb.model;
 
-import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 
-@Embeddable
 public class ApartmentPK implements Serializable {
 	private static final long serialVersionUID = 1L;
 

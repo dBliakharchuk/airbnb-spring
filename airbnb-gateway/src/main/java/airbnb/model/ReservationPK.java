@@ -1,13 +1,9 @@
 package airbnb.model;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.io.Serializable;
 import java.util.Date;
 
 
-@Embeddable
 public class ReservationPK implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -17,7 +13,6 @@ public class ReservationPK implements Serializable {
 	private String apartmentStreet;
 	private String apartmentFlatNumber;
 	private String apartmentCity;
-	@Temporal(TemporalType.DATE)
 	private Date date;
 
 	public ReservationPK() {

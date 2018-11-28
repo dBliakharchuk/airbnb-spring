@@ -1,38 +1,25 @@
 package airbnb.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 
 
-@Entity
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private static final String adminLogin = "admin";
 	private static final String adminPassword = "admin123";
 
-	@Id
 	private String email;
 	private String name;
 	private String password;
 	private String phone;
 	private String surname;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="host")
 	private List<Apartment> apartments;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="sender")
 	private List<Message> messagesSent;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="receiver")
 	private List<Message> messagesReceived;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private List<Reservation> reservations;
 
 	public User() {

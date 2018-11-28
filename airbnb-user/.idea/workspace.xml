@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99e7851d-6f43-4731-acd7-834f2071e584" name="Default" comment="user CRUD with auth done">
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/Requester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/HttpClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airbnb/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airbnb/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/airbnb/model/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airbnb/model/Apartment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -162,7 +156,7 @@
     <session id="-770342801">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
@@ -213,11 +207,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="172">
+              <caret line="58" column="55" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -225,10 +219,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/database/DataAccess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
+            <state relative-caret-position="-168">
               <caret line="28" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
@@ -748,15 +742,6 @@
               <item name="airbnb-user" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="airbnb" type="462c0819:PsiDirectoryNode" />
-              <item name="repositories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="airbnb-user" type="b2602c69:ProjectViewProjectNode" />
-              <item name="airbnb-user" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -957,7 +942,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.34924078" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.39804772" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.39804772" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1265,7 +1250,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/database/DataAccess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="-168">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
@@ -1279,8 +1264,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="172">
+          <caret line="58" column="55" selection-start-line="58" selection-start-column="55" selection-end-line="58" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -2,131 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99e7851d-6f43-4731-acd7-834f2071e584" name="Default" comment="user CRUD with auth done">
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/AdminApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/ApartmentApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/AuthorizationApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/MessagesApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/PublicApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/Requester.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/ReservationApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/TripApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/logic/ApartmentLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/logic/DateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/logic/MessageLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/logic/PaymentUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/logic/TripLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/logic/UserLogic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/accommodation.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/addApartment.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/administatorHomes.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/administatorUsers.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/administrator.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/bootstrap-datepicker.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/cs-select.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/cs-skin-border.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/icomoon.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/manageProfile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/messaging.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/payment.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/reservation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/style.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/css/superfish.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/editAartment.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/bootstrap/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/bootstrap/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/bootstrap/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/bootstrap/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/bootstrap/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon/Read Me.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon/demo-files/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon/demo-files/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon/fonts/icomoon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon/fonts/icomoon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon/fonts/icomoon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon/fonts/icomoon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon/selection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/fonts/icomoon/icomoon/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/headerAdmin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/headerLogin.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/headerLogout.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/car-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/car-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/car-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/car-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/car-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/car-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/cover_bg_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/cover_bg_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/cover_bg_3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/cover_bg_4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/cover_bg_5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/defoult-pic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/loc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/place-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/place-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/place-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/place-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/place-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/place-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/place-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/place-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/place-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/images/place-9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/administrator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/bootstrap-datepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/classie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/google_map.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/hoverIntent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/jquery.easing.1.3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/jquery.magnific-popup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/jquery.stellar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/jquery.waypoints.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/magnific-popup-options.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/manageProfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/modernizr-2.6.2.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/respond.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/selectFx.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/sendMessages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/sticky.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/js/superfish.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/loginWindow.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/manageProfile.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/messages.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/payment.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/registrationWindow.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/reservation.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/results.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/trips.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/tripsMoreInf.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../airbnb-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/UserApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/Apartment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/ApartmentPK.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/ApartmentPK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/MessagePK.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/MessagePK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/ReservationPK.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/ReservationPK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/Requester.java" beforeDir="false" afterPath="$PROJECT_DIR$/../airbnb-gateway/src/main/java/airbnb/api/HttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/airbnb/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airbnb/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/airbnb/model/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/airbnb/model/Apartment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -280,16 +162,17 @@
     <session id="-770342801">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.28" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="19" />
+          <entry key="java" value="30" />
           <entry key="json" value="1" />
           <entry key="jsp" value="5" />
           <entry key="properties" value="3" />
@@ -298,7 +181,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="19" />
+          <entry key="JAVA" value="30" />
           <entry key="JSON" value="1" />
           <entry key="JSP" value="5" />
           <entry key="Properties" value="3" />
@@ -307,7 +190,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2674" />
+          <entry key="java" value="2796" />
           <entry key="properties" value="18" />
           <entry key="txt" value="70" />
           <entry key="xml" value="6" />
@@ -315,7 +198,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2674" />
+          <entry key="JAVA" value="2796" />
           <entry key="PLAIN_TEXT" value="70" />
           <entry key="Properties" value="18" />
           <entry key="XML" value="6" />
@@ -330,11 +213,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+            <state relative-caret-position="244">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -342,11 +225,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/database/DataAccess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/repositories/UserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#406#407#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/model/Apartment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+              <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -354,8 +267,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
+            <state relative-caret-position="240">
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -428,7 +341,6 @@
         <option value="$PROJECT_DIR$/../signify/src/main/java/signify/model/account/Account.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/Trip.java" />
         <option value="$PROJECT_DIR$/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/airbnb/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/MessagePK.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/ReservationPK.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/ApartmentPK.java" />
@@ -445,6 +357,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/airbnb/model/Apartment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/airbnb/Application.java" />
       </list>
     </option>
   </component>
@@ -776,8 +689,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -827,7 +741,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="airbnb" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="airbnb-user" type="b2602c69:ProjectViewProjectNode" />
+              <item name="airbnb-user" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="airbnb" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="airbnb-user" type="b2602c69:ProjectViewProjectNode" />
@@ -840,7 +763,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1025,7 +947,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.26066098" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="1" sideWeight="0.5010846" side_tool="true" weight="0.23400854" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1034,8 +956,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34924078" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.39804772" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34924078" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.39804772" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1056,7 +978,7 @@
       <window_info anchor="right" id="Database" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989154" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="1" sideWeight="0.5010846" side_tool="true" weight="0.23400854" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1065,13 +987,13 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34924078" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.39804772" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34924078" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.39804772" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.27006507" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" weight="0.32897604" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286334" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.39978212" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
@@ -1081,7 +1003,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32885906" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3283582" />
       <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.32995737" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Database" order="9" />
@@ -1115,18 +1037,31 @@
     <option name="LAST_COMMIT_MESSAGE" value="user CRUD with auth done" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/airbnb/database/DataAccess.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/airbnb/repositories/UserRepository.java</url>
+          <line>11</line>
+          <properties class="airbnb.repositories.UserRepository" method="findByNameSurname" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/logic/AccountLogic.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/AccountApi.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/CompanyApi.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/repositories/OwnerAccountRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/model/PhotoGallery.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/model/Event.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/model/Group.java" />
@@ -1165,13 +1100,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
@@ -1239,19 +1167,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/database/DataAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="56" column="20" selection-start-line="56" selection-start-column="20" selection-end-line="56" selection-end-column="20" />
-          <folding>
-            <element signature="e#568#569#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#742#743#0" expanded="true" />
-            <element signature="e#793#794#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE-sources.jar!/org/springframework/web/bind/annotation/GetMapping.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -1263,20 +1178,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12">
           <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1298,25 +1199,91 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/TestApi.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        <state relative-caret-position="240">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-260">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/model/Apartment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#406#407#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.9.RELEASE/spring-web-5.0.9.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="135" selection-start-line="135" selection-end-line="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="796" selection-start-line="796" selection-end-line="796" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.9.RELEASE/spring-aop-5.0.9.RELEASE-sources.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="164" selection-start-line="164" selection-end-line="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/database/DataAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/repositories/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/airbnb/api/UserApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @Entity
-@JsonIgnoreProperties({"host", "picture"})
+@JsonIgnoreProperties({"host"})
 public class Apartment implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,7 @@ public class Apartment implements Serializable {
 	private String description;
 	private String name;
 	@Lob
-	private byte[] picture;
+	private byte[] picture = new byte[1];
 	private double price;
 	@Enumerated(EnumType.STRING)
 	private ApartmentType type;

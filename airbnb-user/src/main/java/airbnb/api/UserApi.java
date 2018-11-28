@@ -18,71 +18,45 @@ public class UserApi {
     @Autowired
     DataAccess data;
 
-//    @GetMapping
-//    public List<UserPublicInfo> getAllUsersPublic() {
-//        return StreamSupport.stream(data.getAllUsers().spliterator(), false).map(UserPublicInfo::new).collect(Collectors.toList());
-//    }
-
-    @GetMapping(produces = "application/json")
+    @GetMapping(consumes = "application/json", produces = "application/json")
     public Iterable<User> getAllUsers() {
-//        if (!isUserAuthorized(em, pass)) {
-//            return Collections.emptyList();
-//        }
 
         return data.getAllUsers();
     }
 
-    @GetMapping(params = "email")
+    @GetMapping(params = "email", consumes = "application/json", produces = "application/json")
     public Optional<User> getUserByEmail(@RequestParam("email") String email) {
-//        if (!isUserAuthorized(em, pass)) {
-//            return Optional.empty();
-//        }
 
         return data.getUserByEmail(email);
     }
 
-    @GetMapping(params = {"name", "surname"})
+    @GetMapping(params = {"name", "surname"}, consumes = "application/json", produces = "application/json")
     public List<User> getUserByNameSurname(@RequestParam("name") String name,
                                            @RequestParam("surname") String surname) {
-//        if (!isUserAuthorized(em, pass)) {
-//            return Collections.emptyList();
-//        }
 
         return data.getUserByNameSurname(name, surname);
     }
 
-    @PostMapping
+    @PostMapping(consumes = "application/json", produces = "application/json")
     public boolean updateUser(@RequestBody User user) {
-//        if (!isUserAuthorized(em, pass)) {
-//            return false;
-//        }
 
         return data.updateUser(user);
     }
 
-    @PutMapping
+    @PutMapping(consumes = "application/json", produces = "application/json")
     public User createOrUpdateUser(@RequestBody User user) {
-//        if (!isUserAuthorized(em, pass)) {
-//            return null;
-//        }
 
         return data.saveOrUpdateUser(user);
     }
 
-    @DeleteMapping(params = "email")
+    @DeleteMapping(params = "email", consumes = "application/json", produces = "application/json")
     public boolean deleteUserByEmail(@RequestParam String email) {
-//        if (!isUserAuthorized(em, pass)) {
-//            return false;
-//        }
 
         return data.deleteUserByEmail(email);
     }
 
-    @DeleteMapping
+    @DeleteMapping(consumes = "application/json", produces = "application/json")
     public boolean deleteUser(@RequestBody User user) {
-//        if (!isUserAuthorized(em, pass)) {
-//            return false;
-//        }
 
         return data.deleteUser(user);
     }

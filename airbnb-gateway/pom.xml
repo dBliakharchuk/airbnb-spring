@@ -89,6 +89,14 @@
             <version>1.19.4</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.yy/android-util -->
+        <dependency>
+            <groupId>com.yy</groupId>
+            <artifactId>android-util</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

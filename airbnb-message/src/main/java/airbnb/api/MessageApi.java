@@ -29,33 +29,29 @@ public class MessageApi {
     
     
     @GetMapping()
-    public Message getAllMessages() {
-		return msg;
+    public Iterable<Message> getAllMessages() {
+    	return data.getAllMessages();
 
     }
     
-  
-    @GetMapping(path = "/recived")
-    public Message getRecivedMessages(@RequestParam("email") String email) {
-		return msg;
-
-    }
-    
+    //need this
     @GetMapping( path = "/sent")
     public Iterable<Message> getSentMessages(@RequestParam("email") String email) {
-
-        return null;
+    	return data.getSentMessagesByEmail(email);
     }
     
-    @PostMapping()
-    public boolean updateUser(@RequestBody Message message) {
+    //need this
+    @GetMapping(path = "/recived")
+    public Iterable<Message> getRecivedMessages(@RequestParam("email") String email) {
 
-        return false;
+    	return data.getRecivedMessagesByEmail(email);
+
     }
     
     
+    //need this
     @PutMapping()
-    public Message createOrUpdateMessage(@RequestBody Message message) {
+    public Message createMessage(@RequestBody Message message) {
 
         return null;
     }

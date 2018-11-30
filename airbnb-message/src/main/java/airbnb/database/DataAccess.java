@@ -2,6 +2,8 @@ package airbnb.database;
 
 import airbnb.model.Message;
 import airbnb.model.MessagePK;
+import airbnb.model.User;
+import airbnb.repositories.MessageRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +15,19 @@ import java.util.Optional;
 
 @Service
 public class DataAccess {
-    private Logger logger = LoggerFactory.getLogger(DataAccess.class);
-
+	@Autowired
+    private MessageRepository messageRepository;
+	
+	 public Iterable<Message> getAllMessages() {
+	        return messageRepository.findAll();
+	    }
     
-
+	 public Iterable<Message> getSentMessagesByEmail(String email) {
+		 return messageRepository.findSentMesseges(email);
+	    }
+	 
+	 public Iterable<Message> getRecivedMessagesByEmail(String email) {
+		 return messageRepository.findRecivedMesseges(email);
+	    }
     
 }

@@ -48,14 +48,15 @@ public class MessageApi {
 
     }
     
-    
     //need this
     @PutMapping()
     public Message createMessage(@RequestBody Message message) {
-
-        return null;
+    	
+    	return data.saveMessage(message);
     }
     
+    
+  
     
     @DeleteMapping()
     public boolean deleteMessage(@RequestBody Message message) {

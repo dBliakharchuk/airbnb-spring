@@ -2,7 +2,6 @@ package airbnb.database;
 
 import airbnb.model.Message;
 import airbnb.model.MessagePK;
-import airbnb.model.User;
 import airbnb.repositories.MessageRepository;
 
 import org.slf4j.Logger;
@@ -28,6 +27,10 @@ public class DataAccess {
 	 
 	 public Iterable<Message> getRecivedMessagesByEmail(String email) {
 		 return messageRepository.findRecivedMesseges(email);
+	    }
+	 
+	 public Message saveMessage(Message message) {
+	        return messageRepository.save(message);
 	    }
     
 }

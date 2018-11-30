@@ -16,53 +16,41 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/messages")
-public class MessageApi {
+public class MessageApi
+{
 
-    @Autowired
-    DataAccess data;
-    
-    
-   
-    User user1 = new User("pd@gmail.com", "Piotr", "Ducki", "123123", "123123123");
-    User user2 = new User("test@gmail.com", "Adnrzej", "Olek", "123123", "123123123");
-    Message msg = new Message(user1, user2, new Date(), "test wiadomosci");
-    
-    
-    @GetMapping()
-    public Iterable<Message> getAllMessages() {
-    	return data.getAllMessages();
+	@Autowired
+	DataAccess data;
 
-    }
-    
-    //need this
-    @GetMapping( path = "/sent")
-    public Iterable<Message> getSentMessages(@RequestParam("email") String email) {
-    	return data.getSentMessagesByEmail(email);
-    }
-    
-    //need this
-    @GetMapping(path = "/recived")
-    public Iterable<Message> getRecivedMessages(@RequestParam("email") String email) {
+	@GetMapping(path = "/sent")
+	public Iterable<Message> getSentMessages(@RequestParam("email") String email)
+	{
+		return data.getSentMessagesByEmail(email);
+	}
 
-    	return data.getRecivedMessagesByEmail(email);
+	@GetMapping(path = "/recived")
+	public Iterable<Message> getRecivedMessages(@RequestParam("email") String email)
+	{
+		return data.getRecivedMessagesByEmail(email);
+	}
 
-    }
-    
-    //need this
-    @PutMapping()
-    public Message createMessage(@RequestBody Message message) {
-    	
-    	return data.saveMessage(message);
-    }
-    
-    
-  
-    
-    @DeleteMapping()
-    public boolean deleteMessage(@RequestBody Message message) {
+	@PutMapping()
+	public Message createMessage(@RequestBody Message message)
+	{
+		return data.saveMessage(message);
+	}
 
-        return false;
-    }
-    
+	
+	@GetMapping()
+	public Iterable<Message> getAllMessages()
+	{
+		return data.getAllMessages();
+	}
+
+	@DeleteMapping()
+	public boolean deleteMessage(@RequestBody Message message)
+	{
+		return false;
+	}
 
 }

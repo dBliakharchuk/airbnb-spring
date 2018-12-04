@@ -1,0 +1,12 @@
+target/
+
+*.class
+web.xml 
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+*.DS_Store
+*.DS_STORE

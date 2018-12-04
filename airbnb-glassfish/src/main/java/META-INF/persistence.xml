@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="airbnb" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>model.Apartment</class>
+		<class>model.ApartmentPK</class>
+		<class>model.Message</class>
+		<class>model.MessagePK</class>
+		<class>model.Reservation</class>
+		<class>model.ReservationPK</class>
+		<class>model.User</class>
+		<properties>
+			<property name="eclipselink.target-server" value="None"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/airbnbdb?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+			<property name="javax.persistence.jdbc.user" value="userLQE"/>
+			<property name="javax.persistence.jdbc.password" value="2dAlhk2RqPhVlFOK"/>
+			<property name="eclipselink.logging.level" value="FINE"/>
+			<property name="eclipselink.jdbc.exclusive-connection.mode" value="Transactional"/>
+			<property name="javax.persistence.schema-generation.database.action" value="create"/>
+			<property name="eclipselink.logging.parameters" value="true"/>
+		</properties>
+	</persistence-unit>
+</persistence>

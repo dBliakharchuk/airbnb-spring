@@ -1,0 +1,194 @@
+#fh5co-tours{
+   height: 1600px;
+}
+
+#user-data-container{
+   width: 20%;
+   float: left;
+   /* background-color: black; */
+   height: 100%;
+   margin-left: 5%;
+   margin-right: 5%;
+   padding: 10px;
+}
+
+#your-profile-header{
+	width: 100%;
+}
+
+#user-houses-container{
+   width: 65%;
+   float: left;
+   height: 100%;
+
+}
+
+
+
+#user-houses-container > h3{
+
+}
+
+#user-data-form > label{
+   width: 100%;
+}
+
+#user-data-form >input{
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+#save-changes-button{
+   width: 100%;
+   height 40px;
+   margin-top: 10px;
+}
+
+#delete-acount-button{
+   width: 100%;
+   	margin-top: 20px;
+   
+}
+
+#change-password-button{
+	width: 100%;
+}
+
+#add-new-apartment-plus{
+   font-size: 140px;
+   color: white;
+   text-align: center;
+
+}
+
+#add-new-apartment-plus:hover{
+   font-size: 150px;
+}
+
+
+
+.user-apartment{
+	padding: 10px;
+	
+}
+
+.user-apartment-title{
+	font-size: 22px !important;
+}
+
+/* ******* add home**********  */
+
+
+#add-new-house-container{
+   margin-top: -60px;
+   width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+   /* background-color: white; */
+   height: 1000px;
+
+}
+
+#add-new-house-container > h1{
+   text-align: center;
+   color: gray;
+}
+
+#add-new-house-form > label{
+   width: 100%;
+}
+
+
+
+#add-new-house-form > input{
+   width: 100%;
+   margin-bottom: 15px;
+   border: 1px solid gray;
+}
+
+#add-new-house-form > textarea{
+   width: 100%;
+   height: 150px;
+   border: 1px solid gray;
+   resize: none;
+   margin-bottom: 15px;
+}
+
+#add-new-house-form > input:focus{
+   border: 1px solid #F78536;
+}
+
+#add-new-house-form > textarea:focus{
+   border: 1px solid #F78536;
+}
+
+#add-new-house-form > [type='radio']{
+	width: 5% !important;
+}
+
+
+#your-profile-header{
+	z-index: 2;
+}
+#add-new-house-form {
+	z-index: 3;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: gray;
+    background-color: white;
+    display: inline-block;
+    border: 1px solid gray;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 30px;
+
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+   border: 1px solid #F78536;
+}
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+
+#save-home-button{
+
+   width: 100%;
+   margin-bottom: 10px;
+
+}
+
+#cancel-home-button{
+  width: 100%;
+  margin-bottom: 15px;
+  
+}
+
+#delete-apartment-button{
+	width: 100%;
+}
+
+#apartament-info-heding{
+	margin-top: 35px;
+}

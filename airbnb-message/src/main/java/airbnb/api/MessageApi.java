@@ -27,22 +27,17 @@ public class MessageApi
 
 	
 	@GetMapping(params = "email")
-	public Map<User, Message> getNewestMessagesByEmail(@RequestParam("email") String email)
+	public List< Message> getNewestMessagesByEmail(@RequestParam("email") String email)
 	{
+		
 		return  data.getNewestMessages(email);		
 	}
 	
 	
 	@GetMapping(params = {"email", "selectedUser"})
-	public ArrayList<Message> getConversation(@RequestParam("email") String email, @RequestParam("selectedUser") String selectedUser)
+	public List<Message> getConversation(@RequestParam("email") String email, @RequestParam("selectedUser") String selectedUser)
 	{
-//		ArrayList<Message> messages  = new ArrayList<Message>();
-//		Message msg = (Message) data.getNewestMessages(email).values().toArray()[0];
-//		messages.add(msg);
-//		msg = (Message) data.getNewestMessages(email).values().toArray()[1];
-//		messages.add(msg);
-//
-//		return messages;
+
 		return data.getConversation(email, selectedUser);
 	}
 	

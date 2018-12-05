@@ -50,8 +50,8 @@ public class MessageServlet extends HttpServlet {
 			String email = (String)request.getSession().getAttribute("emailOfLoggedUser");
 			if(email != null)
 			{
-				User user = DataAccess.getUserByEmail(email);
-				ArrayList<Message> messages=  new ArrayList<Message> (user.getMessagesReceived());
+				
+				ArrayList<Message> messages=  new ArrayList<Message> (DataAccess.getNewestMessages(email));
 				request.setAttribute("messages", messages);
 				request.getRequestDispatcher("messages.jsp").forward(request, response);
 

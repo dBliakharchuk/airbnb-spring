@@ -33,6 +33,72 @@ public class DataAccess
 	private static EntityManagerFactory managerFactory = Persistence.createEntityManagerFactory("airbnb");
 	private static Connection connection = null;
 	
+	// *********************  MESSAGES  *********************
+	
+	public static List<Message> getNewestMessages(String email) {
+		List<Message> results = HttpClientMessage.getNewestMessagesByEmail(email);
+		
+		
+		return results;
+	}
+	
+	public static boolean createMessage(Message message) {
+		EntityManager manager = managerFactory.createEntityManager();
+		try {
+			manager.getTransaction().begin();
+			User sender = manager.find(User.class, message.getSender().getEmail());
+			User receiver = manager.find(User.class, message.getReceiver().getEmail());
+			manager.persist(message);
+			sender.addMessagesSent(message);
+			receiver.addMessagesReceived(message);
+			manager.getTransaction().commit();
+		} catch (Exception ex) {
+			try {
+				if (manager.getTransaction().isActive()) {
+					manager.getTransaction().rollback();
+				}
+			} catch (Exception e) {
+				ex.printStackTrace();
+				e.printStackTrace();
+			}
+			manager.close();
+			return false;
+		}
+		
+		manager.close();
+		return true;
+	}
+	
+	public static boolean removeMessage(Message message) {
+		EntityManager manager = managerFactory.createEntityManager();
+		Message managed = null;
+		try {
+			manager.getTransaction().begin();
+			managed = manager.find(Message.class, message.getId());
+			manager.remove(managed);
+			manager.getTransaction().commit();
+		} catch(Exception ex) {
+			try {
+				if (manager.getTransaction().isActive()) {
+					manager.getTransaction().rollback();
+				}
+			} catch (Exception e) {
+				ex.printStackTrace();
+				e.printStackTrace();
+			}
+			manager.close();
+			return false;
+		}
+		
+		manager.close();
+		return true;
+	}
+	
+	
+	// *********************  USERS  *********************
+
+	
+	
 	public static List<User> getAllUsers() {
 		List<User> results;
 		EntityManager manager = managerFactory.createEntityManager();
@@ -334,57 +400,7 @@ public class DataAccess
 		return true;
 	}
 	
-	public static boolean createMessage(Message message) {
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			manager.getTransaction().begin();
-			User sender = manager.find(User.class, message.getSender().getEmail());
-			User receiver = manager.find(User.class, message.getReceiver().getEmail());
-			manager.persist(message);
-			sender.addMessagesSent(message);
-			receiver.addMessagesReceived(message);
-			manager.getTransaction().commit();
-		} catch (Exception ex) {
-			try {
-				if (manager.getTransaction().isActive()) {
-					manager.getTransaction().rollback();
-				}
-			} catch (Exception e) {
-				ex.printStackTrace();
-				e.printStackTrace();
-			}
-			manager.close();
-			return false;
-		}
-		
-		manager.close();
-		return true;
-	}
-	
-	public static boolean removeMessage(Message message) {
-		EntityManager manager = managerFactory.createEntityManager();
-		Message managed = null;
-		try {
-			manager.getTransaction().begin();
-			managed = manager.find(Message.class, message.getId());
-			manager.remove(managed);
-			manager.getTransaction().commit();
-		} catch(Exception ex) {
-			try {
-				if (manager.getTransaction().isActive()) {
-					manager.getTransaction().rollback();
-				}
-			} catch (Exception e) {
-				ex.printStackTrace();
-				e.printStackTrace();
-			}
-			manager.close();
-			return false;
-		}
-		
-		manager.close();
-		return true;
-	}
+
 	
 	public static List<Reservation> getAllReservations() {
 		List<Reservation> results;

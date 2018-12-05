@@ -40,7 +40,7 @@ public class DataAccess
 	}
 
 	//funcion looks for the newest message send beetwin selected user and other users
-	public Map<User, Message> getNewestMessages(String email)
+	public List <Message> getNewestMessages(String email)
 	{
 		Map<User, Message> conversations = new HashMap<>();
 		getSentMessagesByEmail(email).forEach(msg ->
@@ -74,8 +74,9 @@ public class DataAccess
 			}
 		});
 		
-		
-		return conversations;
+		List<Message> newestMessages = new ArrayList<Message>(conversations.values());
+		Collections.sort(newestMessages);
+		return newestMessages;
 	}
 	
 	

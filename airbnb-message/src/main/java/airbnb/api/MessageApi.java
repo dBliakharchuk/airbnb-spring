@@ -42,7 +42,6 @@ public class MessageApi
 	}
 	
 	
-	
 	@PutMapping()
 	public Message createMessage(@RequestBody Message message)
 	{

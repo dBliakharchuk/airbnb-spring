@@ -36,10 +36,8 @@ public class DataAccess
 	// *********************  MESSAGES  *********************
 	
 	public static List<Message> getNewestMessages(String email) {
-		List<Message> results = HttpClientMessage.getNewestMessagesByEmail(email);
-		
-		
-		return results;
+		return  HttpClientMessage.getNewestMessagesByEmail(email);
+
 	}
 	
 	public static boolean createMessage(Message message) {

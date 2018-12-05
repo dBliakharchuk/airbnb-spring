@@ -81,7 +81,7 @@ public class DataAccess
 	
 	
 	
-	public ArrayList<Message> getConversation(String email, String selectedUser)
+	public List<Message> getConversation(String email, String selectedUser)
 	{
 		ArrayList<Message> messages  = new ArrayList<Message>();
 		getSentMessagesByEmail(email).forEach(msg ->

@@ -49,69 +49,38 @@ public class HttpClientMessage {
     }
     
     
-
-    public static List<User> getUsersByNameSurname(String name, String surname) {
+    public static List<Message> getConversation(String email, String selectedUser) {
         Client client = Client.create();
         WebResource webResource = client.resource(messageServiceUrl);
         ClientResponse response = webResource
-                .queryParam("name", name)
-                .queryParam("surname", surname)
+                .queryParam("email", email)
+                .queryParam("selectedUser", selectedUser)
                 .accept("application/json")
                 .type("application/json")
                 .get(ClientResponse.class);
 
         String result = response.getEntity(String.class);
-        return customGson.fromJson(result, new TypeToken<List<User>>(){}.getType());
+        if(result!=null)
+        	System.out.println(result);
+        return customGson.fromJson(result,  new TypeToken<List<Message>>(){}.getType());
     }
-
-    public static boolean updateUser(User user) {
+    
+    public static Message createMessage(Message message) {
         Client client = Client.create();
         WebResource webResource = client.resource(messageServiceUrl);
         ClientResponse response = webResource
                 .accept("application/json")
                 .type("application/json")
-                .post(ClientResponse.class, customGson.toJson(user));
+                .put(ClientResponse.class, customGson.toJson(message));
 
         String result = response.getEntity(String.class);
-        return Boolean.valueOf(result);
+        return customGson.fromJson(result, Message.class);
     }
+    
+    
+    
 
-    public static User createOrUpdateUser(User user) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(messageServiceUrl);
-        ClientResponse response = webResource
-                .accept("application/json")
-                .type("application/json")
-                .put(ClientResponse.class, customGson.toJson(user));
-
-        String result = response.getEntity(String.class);
-        return customGson.fromJson(result, User.class);
-    }
-
-    public static boolean deleteUserByEmial(String email) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(messageServiceUrl);
-        ClientResponse response = webResource
-                .queryParam("email", email)
-                .accept("application/json")
-                .type("application/json")
-                .delete(ClientResponse.class);
-
-        String result = response.getEntity(String.class);
-        return Boolean.valueOf(result);
-    }
-
-    public static boolean deleteUser(User user) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(messageServiceUrl);
-        ClientResponse response = webResource
-                .accept("application/json")
-                .type("application/json")
-                .delete(ClientResponse.class, customGson.toJson(user));
-
-        String result = response.getEntity(String.class);
-        return Boolean.valueOf(result);
-    }
+   
 
     private static class ByteArrayToBase64TypeAdapter implements JsonSerializer<byte[]>, JsonDeserializer<byte[]> {
         public byte[] deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {

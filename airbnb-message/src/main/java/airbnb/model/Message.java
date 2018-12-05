@@ -12,7 +12,7 @@ import java.util.Date;
 
 @Entity
 @JsonIgnoreProperties({"sender", "receiver"})
-public class Message implements Serializable {
+public class Message implements Serializable, Comparable<Message>{
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
@@ -97,5 +97,11 @@ public class Message implements Serializable {
 				"id=" + id +
 				", isUnread=" + isUnread +
 				'}';
+	}
+
+	@Override
+	public int compareTo(Message o)
+	{
+		return getDate().compareTo(o.getDate());
 	}
 }

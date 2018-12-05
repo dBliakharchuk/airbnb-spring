@@ -10,8 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -22,6 +25,38 @@ public class MessageApi
 	@Autowired
 	DataAccess data;
 
+	
+	@GetMapping(params = "email")
+	public Map<User, Message> getNewestMessagesByEmail(@RequestParam("email") String email)
+	{
+		return  data.getNewestMessages(email);		
+	}
+	
+	
+	@GetMapping(params = {"email", "selectedUser"})
+	public ArrayList<Message> getConversation(@RequestParam("email") String email, @RequestParam("selectedUser") String selectedUser)
+	{
+//		ArrayList<Message> messages  = new ArrayList<Message>();
+//		Message msg = (Message) data.getNewestMessages(email).values().toArray()[0];
+//		messages.add(msg);
+//		msg = (Message) data.getNewestMessages(email).values().toArray()[1];
+//		messages.add(msg);
+//
+//		return messages;
+		return data.getConversation(email, selectedUser);
+	}
+	
+	
+	
+	@PutMapping()
+	public Message createMessage(@RequestBody Message message)
+	{
+		return data.saveMessage(message);
+	}
+	
+	
+	
+	
 	@GetMapping(path = "/sent")
 	public Iterable<Message> getSentMessages(@RequestParam("email") String email)
 	{
@@ -32,12 +67,6 @@ public class MessageApi
 	public Iterable<Message> getRecivedMessages(@RequestParam("email") String email)
 	{
 		return data.getRecivedMessagesByEmail(email);
-	}
-
-	@PutMapping()
-	public Message createMessage(@RequestBody Message message)
-	{
-		return data.saveMessage(message);
 	}
 
 	

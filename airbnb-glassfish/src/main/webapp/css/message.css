@@ -1,0 +1,71 @@
+#conversation-view{
+   display: inline-block;
+   position: fixed;
+   border-radius: 8px;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   width: 750px;
+   height: 600px;
+   margin: auto;
+   background-color: white;
+   overflow: auto;
+
+
+}
+.conversation-header{
+   padding-top: 15px;
+   padding-bottom: 15px;
+   margin-bottom: 20px;
+   border-bottom:  1px solid #F78536;
+}
+
+.conversation-email{
+   font-size: 20px;
+   display: inline-block;
+   margin-left: 30px;
+}
+
+.hide-conversation-button{
+   border-radius: 4px;
+   background-color: white;
+   float: right;
+   margin-right: 30px;
+   border: 2px solid #848484;
+}
+
+
+
+.convesations-message{
+   margin-bottom: 30px;
+   margin-left: 20px;
+   margin-right: 20px;
+   padding: 10px;
+
+   height: auto;
+   width: 500px;
+   border-radius: 5px;
+   border: 1px solid #848484;
+   overflow: auto;
+   text-align: justify;
+
+}
+
+.date{
+   float: right;
+   margin-top: 40px;
+   margin-right: 20px;
+}
+
+.message-recived{
+   background-color: white;
+   float: left;
+}
+
+.message-send{
+   background-color: white;
+   float: right;
+
+
+}

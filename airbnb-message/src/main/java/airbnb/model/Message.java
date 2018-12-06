@@ -101,6 +101,6 @@ public class Message implements Serializable, Comparable<Message>{
 	@Override
 	public int compareTo(Message o)
 	{
-		return getDate().compareTo(o.getDate());
+		return o.getDate().compareTo(getDate());
 	}
 }

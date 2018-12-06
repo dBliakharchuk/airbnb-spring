@@ -147,7 +147,7 @@
 												<div class="media">
 												<input type="hidden" id=<%= senderId%> value= <%= message.getSender().getEmail()	%> >
 													<h4 class="title" >
-																<%= message.getSender().getEmail()	%>
+																<%= message.getReceiver().getEmail()	%>
 													</h4>
 												</div>
 											</td>                                        

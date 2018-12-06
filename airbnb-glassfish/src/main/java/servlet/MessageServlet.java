@@ -52,15 +52,16 @@ public class MessageServlet extends HttpServlet {
 			if(email != null)
 			{
 				ArrayList<Message> messages=  new ArrayList<Message> (DataAccess.getNewestMessages(email));
-				if(messages != null)
-				{
-					System.out.println("jest w servlecie " + messages);
-					System.out.println(messages.getClass());
-					request.setAttribute("messages", messages);
-				}
+//				User user = DataAccess.getUserByEmail(email);
+//				ArrayList<Message> messages=  new ArrayList<Message> (user.getMessagesReceived());		
+				
+				
+
+
+				
+				request.setAttribute("messages", messages);
 				request.getRequestDispatcher("messages.jsp").forward(request, response);
 
-			
 			} else {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp"); 
 				dispatcher.forward(request, response); 

@@ -47,7 +47,19 @@ function conversationSelected(email, selectedUser) {
 }
 
 function hideConvesationViwe() {
-	$("#conversation-view").hide();
-	$('.convesations-messages').remove();
+	
+	//to do!!!!!!!!!!!!
+//	var paras = document.getElementsByClassName('convesations-messages');
+//
+//	while(paras[0]) {
+//	    paras[0].parentNode.removeChild(paras[0]);
+//	}​
+//	
+//	
+//	[].forEach.call(document.querySelectorAll('.convesations-messages'),function(e){
+//		  e.parentNode.removeChild(e);
+//		});
+    
+    $("#conversation-view").hide();
 
 }

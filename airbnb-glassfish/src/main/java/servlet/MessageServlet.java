@@ -52,11 +52,6 @@ public class MessageServlet extends HttpServlet {
 			if(email != null)
 			{
 				ArrayList<Message> messages=  new ArrayList<Message> (DataAccess.getNewestMessages(email));
-//				User user = DataAccess.getUserByEmail(email);
-//				ArrayList<Message> messages=  new ArrayList<Message> (user.getMessagesReceived());		
-				
-				
-
 
 				
 				request.setAttribute("messages", messages);
@@ -89,9 +84,6 @@ public class MessageServlet extends HttpServlet {
 		    int statusInt = status ? 1 : 0;
 			writer.println(statusInt);
 			
-			
-//		    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
-//			System.out.println(senderEmail + reciverEmail + message + formatter.format(date));
 		    
 		}
 }

@@ -4,19 +4,37 @@ import airbnb.model.Message;
 import airbnb.model.MessagePK;
 import airbnb.model.User;
 import airbnb.repositories.MessageRepository;
+import com.loopj.android.http.Base64;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.StreamSupport;
+
+
 
 @Service
 public class DataAccess
@@ -110,7 +128,16 @@ public class DataAccess
 
 	public Message saveMessage(Message message)
 	{
+		User sender = HttpClientUser.getUserByEmail(message.getId().getReceiver());
+		message.setDate(new Date());
+//		message.setReceiver(HttpClientUser.getUserByEmail(message.getId().getReceiver()));
+//		message.setSender(HttpClientUser.getUserByEmail(message.getId().getSender()));
+
 		return messageRepository.save(message);
 	}
+	
+	
+	
+	
 
 }

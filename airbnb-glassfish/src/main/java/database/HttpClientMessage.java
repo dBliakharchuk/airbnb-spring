@@ -3,6 +3,8 @@ package database;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import javax.json.Json;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonDeserializationContext;
@@ -65,13 +67,31 @@ public class HttpClientMessage {
         return customGson.fromJson(result,  new TypeToken<List<Message>>(){}.getType());
     }
     
+    
     public static Message createMessage(Message message) {
+    	
+    	String messageJson = "{\n" + 
+    			"    \"id\": {\n" + 
+    			"        \"sender\": \""+ message.getSender().getEmail()+ "\",\n" + 
+    			"        \"receiver\": \"" + message.getReceiver().getEmail()+  "\"\n" + 
+    			"    },\n" + 
+    			"    \"isUnread\": true,\n" + 
+    			"    \"sender\": null,\n" + 
+    			"    \"receiver\": null,\n" + 
+    			"    \"message\": \""+ message.getMessage() +"\",\n" + 
+    			"    \"date\": \""+"2018-11-18T22:42:30.000+0000" + "\"\n" + 
+    			"}";
+    	
+    	
+    	System.out.println(messageJson);
+		
+
         Client client = Client.create();
         WebResource webResource = client.resource(messageServiceUrl);
         ClientResponse response = webResource
                 .accept("application/json")
                 .type("application/json")
-                .put(ClientResponse.class, customGson.toJson(message));
+                .put(ClientResponse.class, messageJson);
 
         String result = response.getEntity(String.class);
         return customGson.fromJson(result, Message.class);

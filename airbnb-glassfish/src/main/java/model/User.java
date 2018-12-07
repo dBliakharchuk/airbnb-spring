@@ -11,6 +11,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 /**
  * User class is a Java representative of User table in database.
@@ -33,6 +35,7 @@ public class User implements Serializable {
 	private String phone;
 	private String surname;
 
+	//@JsonIgnoreProperties({"password", "apartments", "messagesSent", "messagesReceived", "reservations"}) 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="host")
 	private List<Apartment> apartments;
 

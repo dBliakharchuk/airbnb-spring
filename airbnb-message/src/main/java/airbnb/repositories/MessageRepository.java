@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 
 import airbnb.model.Message;
 import airbnb.model.MessagePK;
-import airbnb.model.User;
 
 public interface MessageRepository extends CrudRepository<Message, MessagePK> 
 {

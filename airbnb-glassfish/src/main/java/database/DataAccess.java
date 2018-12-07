@@ -41,30 +41,14 @@ public class DataAccess
 	}
 	
 	public static boolean createMessage(Message message) {
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			manager.getTransaction().begin();
-			User sender = manager.find(User.class, message.getSender().getEmail());
-			User receiver = manager.find(User.class, message.getReceiver().getEmail());
-			manager.persist(message);
-			sender.addMessagesSent(message);
-			receiver.addMessagesReceived(message);
-			manager.getTransaction().commit();
-		} catch (Exception ex) {
-			try {
-				if (manager.getTransaction().isActive()) {
-					manager.getTransaction().rollback();
-				}
-			} catch (Exception e) {
-				ex.printStackTrace();
-				e.printStackTrace();
-			}
-			manager.close();
-			return false;
-		}
 		
-		manager.close();
-		return true;
+		Message messageReturned = HttpClientMessage.createMessage(message);
+		System.out.println("sds" +messageReturned);
+		if(messageReturned != null)
+			return true;
+		
+		
+		return false;
 	}
 	
 	public static boolean removeMessage(Message message) {

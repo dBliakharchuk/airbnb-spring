@@ -26,7 +26,7 @@ import model.User;
 
 public class HttpClientUser {
 	public static final Gson customGson = new GsonBuilder().registerTypeHierarchyAdapter(byte[].class,
-            new ByteArrayToBase64TypeAdapter()).create();
+            new ByteArrayToBase64TypeAdapter()).setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").create();
 
     private static String userServiceUrl = "http://127.0.0.1:8081/user";
 

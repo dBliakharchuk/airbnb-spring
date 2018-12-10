@@ -18,7 +18,7 @@ public class Application {
 //		removeUserTest();
 //		sendMessageTest(DataAccess.getAllUsers().get(0), DataAccess.getAllUsers().get(1), "test");
 //		MessageLogic.notifyReceiver(Message.createNewMessage(DataAccess.getAllUsers().get(0), DataAccess.getAllUsers().get(1), "test"));
-		System.out.print(HttpClientUser.getAllUsers());
+//		System.out.print(HttpClientUser.getUserByEmail("customer@gmail.com"));
 	}
 	
 	private static void removeReservationTest() {

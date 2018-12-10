@@ -22,9 +22,10 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
-import airbnb.model.User;
 
-//import model.User; <- diferent ignore!
+
+import airbnb.model.User;
+import airbnb.model.Message; 
 
 
 public class HttpClientUser {

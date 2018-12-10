@@ -61,7 +61,7 @@ public class MessageApi
 	public Message createMessage(@RequestBody Message message)
 	{
 		System.out.println("API:" + message );
-//		User reciver = HttpClientUser.getUserByEmail(message.getId().getReceiver());
+//		airbnb.model.User reciver = (airbnb.model.User)HttpClientUser.getUserByEmail(message.getId().getReceiver());
 //		System.out.println("Reciver:" + reciver );
 
 		return data.saveMessage(message);

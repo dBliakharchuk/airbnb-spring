@@ -67,6 +67,12 @@ public class HttpClientMessage {
     
     public static Message createMessage(Message message) {
     	
+    	Gson gson = new GsonBuilder()
+    			.registerTypeHierarchyAdapter(byte[].class,
+    		            new ByteArrayToBase64TypeAdapter())
+    		     .disableInnerClassSerialization()
+    		     .create();
+    	
     	String messageJson = "{\n" + 
     			"    \"id\": {\n" + 
     			"        \"sender\": \""+ message.getSender().getEmail()+ "\",\n" + 
@@ -79,8 +85,15 @@ public class HttpClientMessage {
     			"    \"date\": \""+"2018-11-18T22:42:30.000+0000" + "\"\n" + 
     			"}";
     	
-    	
+    	System.out.println("Gson" + gson.toJson(message));
+    	System.out.println("reciverUserMessage"+message.getReceiver());
     	System.out.println("htppClient"+messageJson);
+    	
+    	User reciver = DataAccess.getUserByEmail(message.getReceiver().getEmail());
+    	System.out.println("reciver"+reciver);
+    	
+    	
+
 		
 
         Client client = Client.create();

@@ -40,6 +40,9 @@ public class DataAccess
 
 	}
 	
+	
+	
+	
 	public static boolean createMessage(Message message) {
 		EntityManager manager = managerFactory.createEntityManager();
 		try {

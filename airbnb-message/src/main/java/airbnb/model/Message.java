@@ -11,7 +11,6 @@ import java.util.Date;
 
 
 @Entity
-@JsonIgnoreProperties({"sender", "receiver"})
 public class Message implements Serializable, Comparable<Message>{
 	private static final long serialVersionUID = 1L;
 

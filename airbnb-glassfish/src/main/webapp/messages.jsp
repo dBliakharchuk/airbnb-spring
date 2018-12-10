@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -57,11 +56,15 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<link rel="stylesheet" href="css/messaging.css">
+	<link rel="stylesheet" href="css/message.css">
+	
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/sendMessages.js"></script>
+	<script type="text/javascript" src="js/message.js"></script>
+	
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -123,6 +126,7 @@
 												String messageClass;
 												String messageId;
 												String senderId;
+												String converationPartner;
 												
 												for (Message message : messages)
 												{
@@ -134,10 +138,14 @@
 													
 													messageId = Integer.toString(counter);
 													senderId = "email" + Integer.toString(counter);
-												
+													
+													if(message.getSender().getEmail().equals(emailOfLoggedUser))
+														converationPartner = message.getReceiver().getEmail();
+													else
+														converationPartner = message.getSender().getEmail();
 										%>
 										 
-										<tr data-status=<%= messageClass%> class=<%= messageClass%> id=<%= messageId%> >
+										<tr data-status=<%= messageClass%> class=<%= messageClass%> id=<%= messageId%> onclick="conversationSelected('<%= emailOfLoggedUser	%>','<%= converationPartner	%>')">
 											<td>
 												<a href="javascript:;" class="star">
 													<i class="glyphicon glyphicon-star"></i>
@@ -145,16 +153,16 @@
 											</td>
 											<td>
 												<div class="media">
-												<input type="hidden" id=<%= senderId%> value= <%= message.getSender().getEmail()	%> >
+												<input type="hidden" id=<%= senderId%> value= <%= converationPartner	%> >
 													<h4 class="title" >
-																<%= message.getSender().getEmail()	%>
+																<%= converationPartner	%>
 													</h4>
 												</div>
 											</td>                                        
 											<td>      
 													<div class="media" onclick="showMessage()">
 														<p class="summary"><%= message.getMessage()	%></p>
-														<p class="meta"><%= message.getDate()%></p>                                                
+														<p class="meta"><%= message.getDate()%></p>                                             
 													</div>
 													<button type="button" class="btn btn-success" onclick="reply(<%= messageId%>)" style="float:right; margin-top: -30px; margin-right: 20px;">Reply</button>
 
@@ -176,6 +184,17 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div id="conversation-view">
+			<div class="conversation-header">
+				<div class="conversation-email" id="conversation-email">
+					
+				</div>
+				<button class="hide-conversation-button"type="button" name="button" onclick="hideConvesationViwe()">X</button>
+			</div>
+			<div class="convesations-messages">
+		
 			</div>
 		</div>
 	</div>
@@ -261,4 +280,3 @@
         
 	</body>
 </html>
-

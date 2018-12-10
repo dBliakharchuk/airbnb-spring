@@ -1,5 +1,6 @@
 package servlet;
 
+import java.awt.List;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -50,13 +51,17 @@ public class MessageServlet extends HttpServlet {
 			String email = (String)request.getSession().getAttribute("emailOfLoggedUser");
 			if(email != null)
 			{
-				User user = DataAccess.getUserByEmail(email);
-				ArrayList<Message> messages=  new ArrayList<Message> (user.getMessagesReceived());
+				ArrayList<Message> messages=  new ArrayList<Message> (DataAccess.getNewestMessages(email));
+//				User user = DataAccess.getUserByEmail(email);
+//				ArrayList<Message> messages=  new ArrayList<Message> (user.getMessagesReceived());		
+				
+				
+
+
+				
 				request.setAttribute("messages", messages);
 				request.getRequestDispatcher("messages.jsp").forward(request, response);
 
-			
-				
 			} else {
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp"); 
 				dispatcher.forward(request, response); 

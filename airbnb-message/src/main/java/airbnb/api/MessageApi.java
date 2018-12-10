@@ -6,7 +6,11 @@ import airbnb.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,42 +25,43 @@ import java.util.Optional;
 @RequestMapping(path = "/messages")
 public class MessageApi
 {
+	@Bean
+	public WebMvcConfigurer corsConfigurer()
+	{
+		return new WebMvcConfigurerAdapter()
+		{
+			@Override
+			public void addCorsMappings(CorsRegistry registry)
+			{
+				registry.addMapping("/**").allowedOrigins("*");
+			}
+		};
+	}
 
 	@Autowired
 	DataAccess data;
 
-	
 	@GetMapping(params = "email")
-	public Map<User, Message> getNewestMessagesByEmail(@RequestParam("email") String email)
+	public List<Message> getNewestMessagesByEmail(@RequestParam("email") String email)
 	{
-		return  data.getNewestMessages(email);		
+
+		return data.getNewestMessages(email);
 	}
-	
-	
-	@GetMapping(params = {"email", "selectedUser"})
-	public ArrayList<Message> getConversation(@RequestParam("email") String email, @RequestParam("selectedUser") String selectedUser)
+
+	@GetMapping(params = { "email", "selectedUser" })
+	public List<Message> getConversation(@RequestParam("email") String email,
+			@RequestParam("selectedUser") String selectedUser)
 	{
-//		ArrayList<Message> messages  = new ArrayList<Message>();
-//		Message msg = (Message) data.getNewestMessages(email).values().toArray()[0];
-//		messages.add(msg);
-//		msg = (Message) data.getNewestMessages(email).values().toArray()[1];
-//		messages.add(msg);
-//
-//		return messages;
+
 		return data.getConversation(email, selectedUser);
 	}
-	
-	
-	
+
 	@PutMapping()
 	public Message createMessage(@RequestBody Message message)
 	{
 		return data.saveMessage(message);
 	}
-	
-	
-	
-	
+
 	@GetMapping(path = "/sent")
 	public Iterable<Message> getSentMessages(@RequestParam("email") String email)
 	{
@@ -69,7 +74,6 @@ public class MessageApi
 		return data.getRecivedMessagesByEmail(email);
 	}
 
-	
 	@GetMapping()
 	public Iterable<Message> getAllMessages()
 	{

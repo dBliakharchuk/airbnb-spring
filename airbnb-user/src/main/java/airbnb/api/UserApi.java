@@ -57,8 +57,7 @@ public class UserApi {
 
     @DeleteMapping(consumes = "application/json", produces = "application/json")
     public boolean deleteUser(@RequestBody User user) {
-
-        return data.deleteUser(user);
+        return data.deleteUserByEmail(user.getEmail());
     }
 
 

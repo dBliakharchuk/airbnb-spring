@@ -53,7 +53,44 @@ public class DataAccess
 		return HttpClientUser.deleteUser(user);
 	}
 	
+	/*************************************Apartments***************************/
 	public static List<Apartment> getAllApartments() {
+		return HttpClientApartment.getAllApartments();
+	}
+	
+	public static Apartment getApartmentById(ApartmentPK apartmentKey) {
+		return HttpClientApartment.getApartmentById(apartmentKey);
+	}
+	
+	public static List<Apartment> getApartmentByHost(String email) {
+		return HttpClientApartment.getApartmentByHost(email);
+	}
+	
+	public static List<Apartment> getApartmentByName(String name) {
+		return HttpClientApartment.getApartmentByName(name);
+	}
+	
+	public static List<Apartment> getApartmentByCountry(String country) {
+		return HttpClientApartment.getApartmentByCounry(country);
+	}
+	
+	public static List<Apartment> getApartmentByCity(String city) {
+		return HttpClientApartment.getApartmentByCity(city);
+	}
+	
+	public static boolean createApartment(Apartment apartment) {
+		return HttpClientApartment.createApartment(apartment);
+	}
+	
+	public static boolean updateApartment(Apartment apartment) {
+		return HttpClientApartment.updateApartment(apartment);
+	}
+	
+	public static boolean removeApartment(Apartment apartment) {
+		return HttpClientApartment.removeApartment(apartment);
+	}
+	
+/*	public static List<Apartment> getAllApartments() {
 		List<Apartment> results;
 		EntityManager manager = managerFactory.createEntityManager();
 		try {
@@ -236,7 +273,7 @@ public class DataAccess
 		manager.close();
 		return true;
 	}
-	
+	*/
 	public static boolean createMessage(Message message) {
 		EntityManager manager = managerFactory.createEntityManager();
 		try {

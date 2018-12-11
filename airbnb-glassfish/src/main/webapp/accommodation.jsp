@@ -111,10 +111,11 @@
                                         <td><span class="beds"><%= apartmentPK.getStreet() + " " + apartmentPK.getBuildingNumber() + "/" +apartmentPK.getFlatNumber() 
                                         							+ ", " + apartmentPK.getCity() +", " + apartment.getCountry()%></span></td>
                                 </tr>
-                                <tr>                                
+                               <!--  parameter host in Apartment = null -->
+                               <%--  <tr>                                
                                     <th scope="row">Host:</th>
                                     <td><span class="host"><%= apartment.getHost().getName() + " " + apartment.getHost().getSurname() %></span></td>
-                                </tr>
+                                </tr> --%>
                                 
                                 <tr>                                
                                         <th scope="row">Price:</th>

@@ -1,11 +1,12 @@
 # airbnb-spring
 
-Gateway : 8080
-User Module : 8081
-Message Module : 8082
-Bank Module : 8083
-Apartment Module : 8084
-Reservation Module : 8085
+##### Ports
+Gateway : 8080 <br/>
+User Module : 8081 <br/>
+Message Module : 8082 <br/>
+Bank Module : 8083 <br/>
+Apartment Module : 8084 <br/>
+Reservation Module : 8085 <br/>
 
 ##### User Module
 | Url  | Method   | Parameters    | Body | Description                  | Returns                                   |

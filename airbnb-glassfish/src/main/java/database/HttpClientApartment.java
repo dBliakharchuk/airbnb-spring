@@ -32,7 +32,7 @@ public class HttpClientApartment {
 	public static final Gson customGson = new GsonBuilder().registerTypeHierarchyAdapter(byte[].class,
             new ByteArrayToBase64TypeAdapter()).setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").create();
 
-    private static String apartmentServiceUrl = "http://127.0.0.1:8083/apartment";
+    private static String apartmentServiceUrl = "http://127.0.0.1:8084/apartment";
     
     /*Host in apartment = null but we can get email of host from ApartmentPK*/
     public static List<Apartment> getAllApartments() {

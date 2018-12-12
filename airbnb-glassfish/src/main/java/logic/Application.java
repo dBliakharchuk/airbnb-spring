@@ -1,24 +1,32 @@
 package logic;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import database.DataAccess;
+import database.HttpClientBank;
 import database.HttpClientUser;
 import model.Apartment;
 import model.Message;
+import model.PaymentInfo;
 import model.Reservation;
 import model.User;
 
 public class Application {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 //		removeReservationTest();
 //		removeApartmentTest();
 //		removeMessageTest();
 //		removeUserTest();
 //		sendMessageTest(DataAccess.getAllUsers().get(0), DataAccess.getAllUsers().get(1), "test");
 //		MessageLogic.notifyReceiver(Message.createNewMessage(DataAccess.getAllUsers().get(0), DataAccess.getAllUsers().get(1), "test"));
-//		System.out.print(HttpClientUser.getUserByEmail("customer@gmail.com"));
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+		Date tomorrow = formatter.parse("2019-12-12");
+		PaymentInfo info = new PaymentInfo("1111222233334444", "123", tomorrow, 30.0);
+		System.out.print(HttpClientBank.isPaymentInfoValid(info));
 	}
 	
 	private static void removeReservationTest() {

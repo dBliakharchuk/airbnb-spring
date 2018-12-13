@@ -32,10 +32,20 @@ function conversationSelected(email, selectedUser) {
 			
 			var divDate = document.createElement('div');
 			divDate.className = "date";
-			divDate.innerHTML = result[i].date;
+			
+			var dateString = result[i].date;
+			var dateParts = dateString.split("T");
+			var dateComponet =  dateParts[0];
+			dateComponet.replace("-", ".");
+			var hourComponent = dateParts[1];
+			hourComponent =  hourComponent.substring(0, 8);
+			
+			var finalDateString = dateComponet + "  " + hourComponent;
+			
+			divDate.innerHTML = finalDateString;
 			
 			div.appendChild(divDate);
-			$("#conversation-view")[0].appendChild(div);
+			$("#convesations-messages")[0].appendChild(div);
 			$("#conversation-view").show();
 			
 		}
@@ -48,18 +58,21 @@ function conversationSelected(email, selectedUser) {
 
 function hideConvesationViwe() {
 	
-	//to do!!!!!!!!!!!!
-//	var paras = document.getElementsByClassName('convesations-messages');
-//
-//	while(paras[0]) {
-//	    paras[0].parentNode.removeChild(paras[0]);
-//	}​
+
+	
+	var myNode = document.getElementById("convesations-messages");
+	while (myNode.firstChild) {
+	    myNode.removeChild(myNode.firstChild);
+	}
 //	
+//	$("div.convesations-message message-send").remove();
+//	$("div.convesations-message message-recived").remove();
+//
 //	
 //	[].forEach.call(document.querySelectorAll('.convesations-messages'),function(e){
 //		  e.parentNode.removeChild(e);
 //		});
-    
+//    
     $("#conversation-view").hide();
 
 }

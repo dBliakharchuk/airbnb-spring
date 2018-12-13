@@ -1,6 +1,7 @@
 package airbnb.api;
 
 import airbnb.database.DataAccess;
+import airbnb.database.HttpClientUser;
 import airbnb.model.Message;
 import airbnb.model.User;
 import org.slf4j.Logger;
@@ -52,13 +53,21 @@ public class MessageApi
 	public List<Message> getConversation(@RequestParam("email") String email,
 			@RequestParam("selectedUser") String selectedUser)
 	{
-
+		
 		return data.getConversation(email, selectedUser);
 	}
 
 	@PutMapping()
 	public Message createMessage(@RequestBody Message message)
 	{
+		
+		System.out.println(message.getId().getReceiver());
+		User reciver = (airbnb.model.User)HttpClientUser.getUserByEmail(message.getId().getReceiver());
+		User sender = (airbnb.model.User)HttpClientUser.getUserByEmail(message.getId().getSender());
+		
+		message.setReceiver(reciver);
+		message.setSender(sender);
+
 		return data.saveMessage(message);
 	}
 

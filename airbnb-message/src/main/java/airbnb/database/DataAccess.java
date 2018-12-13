@@ -94,6 +94,7 @@ public class DataAccess
 		
 		getRecivedMessagesByEmail(email).forEach(msg ->
 		{
+			setMessageAsRead(msg);
 			if (msg.getSender().getEmail().equals(selectedUser))
 			{
 				messages.add(msg);
@@ -111,6 +112,12 @@ public class DataAccess
 	public Message saveMessage(Message message)
 	{
 		return messageRepository.save(message);
+	}
+	
+	public void setMessageAsRead(Message message)
+	{
+		 message.setIsUnread(false);
+		 saveMessage(message);
 	}
 
 }

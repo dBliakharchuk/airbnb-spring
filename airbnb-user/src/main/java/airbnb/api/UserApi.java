@@ -38,9 +38,9 @@ public class UserApi {
     }
 
     @PostMapping(consumes = "application/json", produces = "application/json")
-    public boolean updateUser(@RequestBody User user) {
+    public boolean createUser(@RequestBody User user) {
 
-        return data.updateUser(user);
+        return data.createUser(user);
     }
 
     @PutMapping(consumes = "application/json", produces = "application/json")

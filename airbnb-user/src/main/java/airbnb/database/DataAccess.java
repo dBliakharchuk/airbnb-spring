@@ -33,8 +33,8 @@ public class DataAccess {
         return userRepository.save(user);
     }
 
-    public boolean updateUser(User user) {
-        if (!userRepository.existsById(user.getEmail())) {
+    public boolean createUser(User user) {
+        if (userRepository.existsById(user.getEmail())) {
             return false;
         }
         return userRepository.save(user) != null;

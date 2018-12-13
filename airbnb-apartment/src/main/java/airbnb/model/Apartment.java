@@ -1,37 +1,16 @@
-package model;
+package airbnb.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 
-
-/**
- * Apartment class is a Java representative of Apartment table in database.
- * 
- * @author Mateusz
- */
 @Entity
-@NamedQueries({
-	@NamedQuery(name="Apartment.findAll", query="SELECT a FROM Apartment a"),
-	@NamedQuery(name="Apartment.findByHost", query="SELECT a FROM Apartment a where a.id.host = :host"),
-	@NamedQuery(name="Apartment.findByName", query="SELECT a FROM Apartment a where a.name = :name"),
-	@NamedQuery(name="Apartment.findByCountry", query="SELECT a FROM Apartment a where a.country = :country"),
-	@NamedQuery(name="Apartment.findByCity", query="SELECT a FROM Apartment a where a.id.city = :city"),
-	@NamedQuery(name="Apartment.findCheaperThan", query="SELECT a FROM Apartment a where a.price <= :price")})
+@JsonIgnoreProperties({"host"})
 public class Apartment implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -46,13 +25,13 @@ public class Apartment implements Serializable {
 	private String description;
 	private String name;
 	@Lob
-	private byte[] picture;
+	private byte[] picture = new byte[1];
 	private double price;
 	@Enumerated(EnumType.STRING)
 	private ApartmentType type;
 
 	@ManyToOne
-	@JoinColumn(name="host")
+	@JoinColumn(name="host", insertable=false, updatable=false)
 	private User host;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="apartment")
@@ -75,7 +54,7 @@ public class Apartment implements Serializable {
 		this.name = name;
 		this.price = price;
 		this.type = type;
-	}/*in this case host is null*/
+	}
 
 
 
@@ -253,13 +232,16 @@ public class Apartment implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Apartment [id=" + id + ", bedsAdult=" + bedsAdult + ", bedsChild=" + bedsChild + ", country=" + country
-				+ ", description=" + description + ", name=" + name + ", picture=" + Arrays.toString(picture)
-				+ ", price=" + price + ", type=" + type + ", host=" + host + "]";
+		return "Apartment{" +
+				"id=" + id +
+				", bedsAdult=" + bedsAdult +
+				", bedsChild=" + bedsChild +
+				", country='" + country + '\'' +
+				", description='" + description + '\'' +
+				", name='" + name + '\'' +
+				", picture=" + Arrays.toString(picture) +
+				", price=" + price +
+				", type=" + type +
+				'}';
 	}
-
-	
-	
-	
-
 }

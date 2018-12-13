@@ -19,6 +19,7 @@ import model.Message;
 import model.Reservation;
 import model.User;
 
+
 /**
  * DataAccess allows system to create, read, update and delete data from database.
  * Get methods return objects or arrays if succeeded and null or empty array if not
@@ -108,193 +109,41 @@ public class DataAccess
 
 	
 	
-	
-	
-	
 	public static List<Apartment> getAllApartments() {
-		List<Apartment> results;
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			Query query = manager.createNamedQuery("Apartment.findAll", Apartment.class);
-			results = query.getResultList();
-		} catch(Exception ex) {
-			ex.printStackTrace();
-			results = new ArrayList();
-		} finally {
-			manager.close();
-		}
-		return results;
+		return HttpClientApartment.getAllApartments();
 	}
 	
 	public static Apartment getApartmentById(ApartmentPK apartmentKey) {
-		Apartment result = null;
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			result = manager.find(Apartment.class, apartmentKey);
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			manager.close();
-		}
-	
-		return result;		
+		return HttpClientApartment.getApartmentById(apartmentKey);
 	}
 	
 	public static List<Apartment> getApartmentByHost(String email) {
-		List<Apartment> results = null;
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			Query query = manager.createNamedQuery("Apartment.findByHost", Apartment.class);
-			query.setParameter("host", email);
-			results = query.getResultList();
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			manager.close();
-		}
-		
-		return results;
+		return HttpClientApartment.getApartmentByHost(email);
 	}
 	
 	public static List<Apartment> getApartmentByName(String name) {
-		List<Apartment> results = null;
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			Query query = manager.createNamedQuery("Apartment.findByName", Apartment.class);
-			query.setParameter("name", name);
-			results = query.getResultList();
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			manager.close();
-		}
-		
-		return results;
+		return HttpClientApartment.getApartmentByName(name);
 	}
 	
 	public static List<Apartment> getApartmentByCountry(String country) {
-		List<Apartment> results = null;
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			Query query = manager.createNamedQuery("Apartment.findByCountry", Apartment.class);
-			query.setParameter("country", country);
-			results = query.getResultList();
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			manager.close();
-		}
-		
-		return results;
+		return HttpClientApartment.getApartmentByCounry(country);
 	}
 	
 	public static List<Apartment> getApartmentByCity(String city) {
-		List<Apartment> results = null;
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			Query query = manager.createNamedQuery("Apartment.findByCity", Apartment.class);
-			query.setParameter("city", city);
-			results = query.getResultList();
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			manager.close();
-		}
-		
-		return results;
+		return HttpClientApartment.getApartmentByCity(city);
 	}
 	
-	public static List<Apartment> getApartmentCheaperThan(double limit) {
-		List<Apartment> results = null;
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			Query query = manager.createNamedQuery("Apartment.findCheaperThan", Apartment.class);
-			query.setParameter("price", limit);
-			results = query.getResultList();
-		} catch(Exception ex) {
-			ex.printStackTrace();
-		} finally {
-			manager.close();
-		}
-		
-		return results;
+	public static boolean createApartment(Apartment apartment) {
+		return HttpClientApartment.createApartment(apartment);
 	}
 	
-	public static boolean createApartment(Apartment apartment)  {
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			manager.getTransaction().begin();
-			User host = manager.find(User.class, apartment.getHost().getEmail());
-			host.addApartment(apartment);
-			manager.persist(apartment);
-			manager.getTransaction().commit();
-		} catch (Exception ex) {
-			try {
-				if (manager.getTransaction().isActive()) {
-					manager.getTransaction().rollback();
-				}
-			} catch (Exception e) {
-				ex.printStackTrace();
-				e.printStackTrace();
-			}
-			manager.close();
-			return false;
-		}
-		
-		manager.close();
-		return true;
+	public static boolean updateApartment(Apartment apartment) {
+		return HttpClientApartment.updateApartment(apartment);
 	}
 	
-	public static boolean updateApartment(Apartment apartment)  {
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			manager.getTransaction().begin();
-			manager.find(Apartment.class, apartment.getId());
-			manager.merge(apartment);
-			manager.getTransaction().commit();
-		} catch (Exception ex) {
-			try {
-				if (manager.getTransaction().isActive()) {
-					manager.getTransaction().rollback();
-				}
-			} catch (Exception e) {
-				ex.printStackTrace();
-				e.printStackTrace();
-			}
-			manager.close();
-			return false;
-		}
-		
-		manager.close();
-		return true;
+	public static boolean removeApartment(Apartment apartment) {
+		return HttpClientApartment.removeApartment(apartment);
 	}
-	
-	public static boolean removeApartment(Apartment apartment)  {
-		EntityManager manager = managerFactory.createEntityManager();
-		Apartment managed = null;
-		try {
-			manager.getTransaction().begin();
-			managed = manager.find(Apartment.class, apartment.getId());
-			manager.remove(managed);
-			manager.getTransaction().commit();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			try {
-				if (manager.getTransaction().isActive()) {
-					manager.getTransaction().rollback();
-				}
-			} catch (Exception e) {
-				ex.printStackTrace();
-				e.printStackTrace();
-			}
-			manager.close();
-			return false;
-		}
-		
-		manager.close();
-		return true;
-	}
-	
 	
 	
 	public static List<Reservation> getAllReservations() {

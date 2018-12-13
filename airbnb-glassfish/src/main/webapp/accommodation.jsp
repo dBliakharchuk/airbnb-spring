@@ -97,10 +97,10 @@
 							alert("<%= loginError%>")
 						</script>
 					<% } %>
-					<div class="col-md-12 animate-box">
+					<div class="col-md-12">
 						<h2 class="heading-title"><%= apartment.getName() %></h2>
 					</div>
-					<div class="col-md-6 animate-box">
+					<div class="col-md-6">
                         <span class="description">
 						<p><%= apartment.getDescription() %></p> 
                         </span>
@@ -111,10 +111,11 @@
                                         <td><span class="beds"><%= apartmentPK.getStreet() + " " + apartmentPK.getBuildingNumber() + "/" +apartmentPK.getFlatNumber() 
                                         							+ ", " + apartmentPK.getCity() +", " + apartment.getCountry()%></span></td>
                                 </tr>
-                                <tr>                                
+                               <!--  parameter host in Apartment = null -->
+                               <%--  <tr>                                
                                     <th scope="row">Host:</th>
                                     <td><span class="host"><%= apartment.getHost().getName() + " " + apartment.getHost().getSurname() %></span></td>
-                                </tr>
+                                </tr> --%>
                                 
                                 <tr>                                
                                         <th scope="row">Price:</th>
@@ -142,12 +143,21 @@
                         </div>
                                                                         
                     </div>
-					<div class="col-md-6 animate-box">
+					<div class="col-md-6 ">
 						<img class="img-responsive" src=<%=photoUrl %> alt="travel">
 					</div>
 				</div>
 			</div>
 		</div>
+		
+	<!-- Login Modal -->
+	<jsp:include page="loginWindow.jsp"></jsp:include>     
+            
+	<!-- Registro Modal -->
+	<jsp:include page="registrationWindow.jsp"></jsp:include>
+	 
+	
+	<jsp:include page="footer.jsp"/>
 
 
 	</div>

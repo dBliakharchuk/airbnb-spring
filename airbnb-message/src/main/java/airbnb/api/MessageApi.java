@@ -53,7 +53,7 @@ public class MessageApi
 	public List<Message> getConversation(@RequestParam("email") String email,
 			@RequestParam("selectedUser") String selectedUser)
 	{
-
+		
 		return data.getConversation(email, selectedUser);
 	}
 

@@ -23,3 +23,9 @@ Reservation Module : 8085 <br/>
 | Url  | Method   | Parameters    | Body        | Description                  | Returns                                     |
 |:-----| ---------|:--------------|:------------|:-----------------------------|:--------------------------------------------|
 |bank/ | POST     |               | PaymentInfo | validate credit card         | Response.200 (true) or Response.402 (false) |
+
+
+##### Message Module
+| Url  | Method   | Parameters    | Body        | Description                  | Returns                                     |
+|:--------| ---------|:--------------|:------------|:-----------------------------|:--------------------------------------------|
+|messages/ | POST     |               | PaymentInfo | validate credit card         | Response.200 (true) or Response.402 (false) |

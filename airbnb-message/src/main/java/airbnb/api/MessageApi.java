@@ -60,9 +60,13 @@ public class MessageApi
 	@PutMapping()
 	public Message createMessage(@RequestBody Message message)
 	{
-		System.out.println("API:" + message );
-//		airbnb.model.User reciver = (airbnb.model.User)HttpClientUser.getUserByEmail(message.getId().getReceiver());
-//		System.out.println("Reciver:" + reciver );
+		
+		System.out.println(message.getId().getReceiver());
+		User reciver = (airbnb.model.User)HttpClientUser.getUserByEmail(message.getId().getReceiver());
+		User sender = (airbnb.model.User)HttpClientUser.getUserByEmail(message.getId().getSender());
+		
+		message.setReceiver(reciver);
+		message.setSender(sender);
 
 		return data.saveMessage(message);
 	}

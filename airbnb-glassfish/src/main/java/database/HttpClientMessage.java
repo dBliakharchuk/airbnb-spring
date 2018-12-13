@@ -27,7 +27,7 @@ import model.User;
 
 public class HttpClientMessage {
 	public static final Gson customGson = new GsonBuilder().registerTypeHierarchyAdapter(byte[].class,
-            new ByteArrayToBase64TypeAdapter()).create();
+            new ByteArrayToBase64TypeAdapter()).setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").create();
 
     private static String messageServiceUrl = "http://127.0.0.1:8082/messages";
 
@@ -71,6 +71,7 @@ public class HttpClientMessage {
     			.registerTypeHierarchyAdapter(byte[].class,
     		            new ByteArrayToBase64TypeAdapter())
     		     .disableInnerClassSerialization()
+    		     .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS")
     		     .create();
     	
     	String messageJson = "{\n" + 
@@ -85,23 +86,19 @@ public class HttpClientMessage {
     			"    \"date\": \""+"2018-11-18T22:42:30.000+0000" + "\"\n" + 
     			"}";
     	
-    	System.out.println("Gson" + gson.toJson(message));
-    	System.out.println("reciverUserMessage"+message.getReceiver());
-    	System.out.println("htppClient"+messageJson);
+    //	System.out.println("Gson" + gson.toJson(message));
     	
-    	User reciver = DataAccess.getUserByEmail(message.getReceiver().getEmail());
-    	System.out.println("reciver"+reciver);
+    	 
+    	//User reciver = DataAccess.getUserByEmail(message.getReceiver().getEmail()); 
+    	//System.out.println("reciver"+reciver);
     	
     	
-
-		
-
         Client client = Client.create();
         WebResource webResource = client.resource(messageServiceUrl);
         ClientResponse response = webResource
                 .accept("application/json")
                 .type("application/json")
-                .put(ClientResponse.class, messageJson);
+                .put(ClientResponse.class, gson.toJson(message));
 
         String result = response.getEntity(String.class);
         return customGson.fromJson(result, Message.class);

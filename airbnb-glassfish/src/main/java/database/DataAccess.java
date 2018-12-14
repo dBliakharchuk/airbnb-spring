@@ -73,40 +73,10 @@ public class DataAccess
 		return false;
 	}
 	
-	public static boolean removeMessage(Message message) {
-		EntityManager manager = managerFactory.createEntityManager();
-		Message managed = null;
-		try {
-			manager.getTransaction().begin();
-			managed = manager.find(Message.class, message.getId());
-			manager.remove(managed);
-			manager.getTransaction().commit();
-		} catch(Exception ex) {
-			try {
-				if (manager.getTransaction().isActive()) {
-					manager.getTransaction().rollback();
-				}
-			} catch (Exception e) {
-				ex.printStackTrace();
-				e.printStackTrace();
-			}
-			manager.close();
-			return false;
-		}
-		
-		manager.close();
-		return true;
-	}
-	
-	
-	
 	
 	
 	// *********************  APARTMENTS  *********************
 
-	
-	
-	
 	
 	
 	public static List<Apartment> getAllApartments() {

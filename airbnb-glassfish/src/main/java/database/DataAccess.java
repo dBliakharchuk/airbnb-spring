@@ -67,10 +67,8 @@ public class DataAccess
 	
 	public static boolean createMessage(Message message) {
 		Message messageReturned = HttpClientMessage.createMessage(message);
-		System.out.println("Returne message from API" +messageReturned);
 		if(messageReturned != null)
 			return true;
-		
 		
 		return false;
 	}

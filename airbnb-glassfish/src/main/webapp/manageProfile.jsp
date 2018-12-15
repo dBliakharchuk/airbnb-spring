@@ -140,7 +140,7 @@
 								%>
 									
 								<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-									<div href="#"><img src= <%=photoUrl %> alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+									<div href="#"><img src="data:image/jpg;base64,<%=userApartments.get(i).getBase64Image() %> alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
 										<div class="desc user-apartment">
 											<span></span>
 											<h3 class="user-apartment-title"> <%=userApartments.get(i).getName() %></h3>

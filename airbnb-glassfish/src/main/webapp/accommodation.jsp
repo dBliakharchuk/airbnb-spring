@@ -66,10 +66,9 @@
 
 		<!-- start:header-top -->
 			<%
-			String emailOfLoggedUser = (String) request.getSession().getAttribute("emailOfLoggedUser"); 		
-			if (emailOfLoggedUser != null) { %>
+				String emailOfLoggedUser = (String) request.getSession().getAttribute("emailOfLoggedUser"); 		
+				if (emailOfLoggedUser != null) { %>
 				<jsp:include page="headerLogin.jsp"/> 
-				
 			<% } else {  %>
 				<jsp:include page="headerLogout.jsp"/>
 			<% } %>
@@ -144,7 +143,7 @@
                                                                         
                     </div>
 					<div class="col-md-6 ">
-						<img class="img-responsive" src=<%=photoUrl %> alt="travel">
+						<img class="img-responsive" src="data:image/jpg;base64,<%=apartment.getBase64Image() %> alt="travel">
 					</div>
 				</div>
 			</div>

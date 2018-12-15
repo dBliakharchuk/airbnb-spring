@@ -313,102 +313,117 @@ public class DataAccess
 	}
 	
 	
+// ********************** RESERVATIONS *******************************
+	
 	
 	public static List<Reservation> getAllReservations() {
-		List<Reservation> results;
-		EntityManager manager = managerFactory.createEntityManager();
-		try {
-			Query query = manager.createNamedQuery("Reservation.findAll", Reservation.class);
-			results = query.getResultList();
-		} catch(Exception ex) {
-			ex.printStackTrace();
-			results = new ArrayList();
-		} finally {
-			manager.close();
-		}
-		return results;
+		return HttpClientReservation.getAllReservations();
 	}
 	
-	public static boolean createReservation(Reservation reservation) {
-		PreparedStatement stmt = null;
-		try {
-			connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/airbnbdb?user=userLQE&password=2dAlhk2RqPhVlFOK" + 
-							"&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
-			
-			stmt = connection.prepareStatement("INSERT INTO Reservation VALUES(?,?,?,?,?,?,?)");
-			
-			stmt.setString(1, reservation.getUser().getEmail());
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
-			stmt.setString(2, dateFormat.format(reservation.getDate()));
-			stmt.setString(3, reservation.getApartment().getHost().getEmail());
-			stmt.setString(4, reservation.getApartment().getBuildingNumber());
-			stmt.setString(5, reservation.getApartment().getStreet());
-			stmt.setString(6, reservation.getApartment().getFlatNumber());
-			stmt.setString(7, reservation.getApartment().getCity());
-			
-		    stmt.executeUpdate();
-		     
-		} catch(Exception ex) {
-			
-			try {
-				
-				if (connection != null) {
-					connection.close();
-				}
-				
-				if (stmt != null) {
-					stmt.close();
-				}
-				
-			} catch(SQLException e) {
-				e.printStackTrace();
-			}
-			
-			ex.printStackTrace();
-			return false;
-		}
-		
-		try {
-			
-			if (connection != null) {
-				connection.close();
-			}
-			
-			if (stmt != null) {
-				stmt.close();
-			}
-			
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
-		
-		return true;
+	public static boolean createReservation(Reservation reservation)  {
+		return HttpClientReservation.createReservation(reservation) != null;
 	}
 	
 	public static boolean removeReservation(Reservation reservation)  {
-		EntityManager manager = managerFactory.createEntityManager();
-		Reservation managed = null;
-		try {
-			manager.getTransaction().begin();
-			managed = manager.find(Reservation.class, reservation.getId());
-			manager.remove(managed);
-			manager.getTransaction().commit();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			try {
-				if (manager.getTransaction().isActive()) {
-					manager.getTransaction().rollback();
-				}
-			} catch (Exception e) {
-				ex.printStackTrace();
-				e.printStackTrace();
-			}
-			manager.close();
-			return false;
-		}
-		
-		manager.close();
-		return true;
+		return HttpClientReservation.removeReservation(reservation);
 	}
+	
+	
+//	public static List<Reservation> getAllReservations() {
+//		List<Reservation> results;
+//		EntityManager manager = managerFactory.createEntityManager();
+//		try {
+//			Query query = manager.createNamedQuery("Reservation.findAll", Reservation.class);
+//			results = query.getResultList();
+//		} catch(Exception ex) {
+//			ex.printStackTrace();
+//			results = new ArrayList();
+//		} finally {
+//			manager.close();
+//		}
+//		return results;
+//	}
+//	
+//	public static boolean createReservation(Reservation reservation) {
+//		PreparedStatement stmt = null;
+//		try {
+//			connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/airbnbdb?user=userLQE&password=2dAlhk2RqPhVlFOK" + 
+//							"&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
+//			
+//			stmt = connection.prepareStatement("INSERT INTO Reservation VALUES(?,?,?,?,?,?,?)");
+//			
+//			stmt.setString(1, reservation.getUser().getEmail());
+//			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
+//			stmt.setString(2, dateFormat.format(reservation.getDate()));
+//			stmt.setString(3, reservation.getApartment().getHost().getEmail());
+//			stmt.setString(4, reservation.getApartment().getBuildingNumber());
+//			stmt.setString(5, reservation.getApartment().getStreet());
+//			stmt.setString(6, reservation.getApartment().getFlatNumber());
+//			stmt.setString(7, reservation.getApartment().getCity());
+//			
+//		    stmt.executeUpdate();
+//		     
+//		} catch(Exception ex) {
+//			
+//			try {
+//				
+//				if (connection != null) {
+//					connection.close();
+//				}
+//				
+//				if (stmt != null) {
+//					stmt.close();
+//				}
+//				
+//			} catch(SQLException e) {
+//				e.printStackTrace();
+//			}
+//			
+//			ex.printStackTrace();
+//			return false;
+//		}
+//		
+//		try {
+//			
+//			if (connection != null) {
+//				connection.close();
+//			}
+//			
+//			if (stmt != null) {
+//				stmt.close();
+//			}
+//			
+//		} catch(SQLException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		return true;
+//	}
+//	
+//	public static boolean removeReservation(Reservation reservation)  {
+//		EntityManager manager = managerFactory.createEntityManager();
+//		Reservation managed = null;
+//		try {
+//			manager.getTransaction().begin();
+//			managed = manager.find(Reservation.class, reservation.getId());
+//			manager.remove(managed);
+//			manager.getTransaction().commit();
+//		} catch (Exception ex) {
+//			ex.printStackTrace();
+//			try {
+//				if (manager.getTransaction().isActive()) {
+//					manager.getTransaction().rollback();
+//				}
+//			} catch (Exception e) {
+//				ex.printStackTrace();
+//				e.printStackTrace();
+//			}
+//			manager.close();
+//			return false;
+//		}
+//		
+//		manager.close();
+//		return true;
+//	}
 
 }

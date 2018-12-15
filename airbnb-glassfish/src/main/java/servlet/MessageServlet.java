@@ -52,10 +52,6 @@ public class MessageServlet extends HttpServlet {
 			if(email != null)
 			{
 				ArrayList<Message> messages=  new ArrayList<Message> (DataAccess.getNewestMessages(email));
-//				User user = DataAccess.getUserByEmail(email);
-//				ArrayList<Message> messages=  new ArrayList<Message> (user.getMessagesReceived());		
-				
-				
 
 
 				

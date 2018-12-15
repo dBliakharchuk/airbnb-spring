@@ -193,7 +193,7 @@
 				</div>
 				<button class="hide-conversation-button"type="button" name="button" onclick="hideConvesationViwe()">X</button>
 			</div>
-			<div class="convesations-messages">
+			<div class="convesations-messages" id="convesations-messages">
 		
 			</div>
 		</div>

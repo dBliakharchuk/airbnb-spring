@@ -95,6 +95,7 @@ public class Message implements Serializable, Comparable<Message>{
 		return "Message{" +
 				"id=" + id +
 				", isUnread=" + isUnread +
+				", senderEmailOBJECT=" + sender.getEmail() + 
 				'}';
 	}
 

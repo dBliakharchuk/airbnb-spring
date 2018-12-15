@@ -116,7 +116,9 @@
 										<div class="place-cel" id=<%=cellId + i%>
 											onclick="selectApartmentCell(this.id, <%=apartments.size()%>)">
 											<div class="place-email-field">
-												<%=apartments.get(i).getHost().getEmail()%>
+												<!-- attribute host in the apartment = null -->
+												<%-- <%=apartments.get(i).getHost().getEmail()%> --%>
+												<%=apartments.get(i).getId().getHost()%>
 											</div>
 											<div class="place-name-field">
 												<%=apartments.get(i).getName()%>

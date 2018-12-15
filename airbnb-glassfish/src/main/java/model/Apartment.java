@@ -75,7 +75,7 @@ public class Apartment implements Serializable {
 		this.name = name;
 		this.price = price;
 		this.type = type;
-	}
+	}/*in this case host is null*/
 
 
 

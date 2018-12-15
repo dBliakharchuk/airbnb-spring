@@ -4,6 +4,9 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +14,7 @@ import java.util.List;
 
 
 @Entity
+@JsonIgnoreProperties({"apartments"})
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private static final String adminLogin = "admin";

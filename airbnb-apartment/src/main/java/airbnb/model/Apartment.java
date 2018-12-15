@@ -3,17 +3,20 @@ package airbnb.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+
+import java.beans.Transient;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 
 
 @Entity
-@JsonIgnoreProperties({"host"})
+/*@JsonIgnoreProperties({"host"})*/
 public class Apartment implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
 	@EmbeddedId
 	private ApartmentPK id;
 	
@@ -26,6 +29,8 @@ public class Apartment implements Serializable {
 	private String name;
 	@Lob
 	private byte[] picture = new byte[1];
+	
+	
 	private double price;
 	@Enumerated(EnumType.STRING)
 	private ApartmentType type;
@@ -36,6 +41,18 @@ public class Apartment implements Serializable {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="apartment")
 	private List<Reservation> reservations;
+	
+	/*private String base64Image;
+	
+	public void setBase64Image(String base64Image) {
+        this.base64Image = base64Image;
+	}
+
+	@Transient
+	public String getBase64Image() {
+	    base64Image = Base64.getEncoder().encodeToString(this.picture);
+	    return base64Image;
+	}*/
 
 	public Apartment() {
 	}
@@ -91,6 +108,8 @@ public class Apartment implements Serializable {
 		this.host = host;
 		this.reservations = new ArrayList<Reservation>();
 	}
+	
+	
 
 	public ApartmentPK getId() {
 		return this.id;

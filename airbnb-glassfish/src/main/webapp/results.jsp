@@ -111,7 +111,7 @@
 					photoUrl = request.getContextPath() + "/apartmentsImages/" + apartmentKey.toUrl();
 					%>
 					<div class="col-md-4 col-sm-6 fh5co-tours animate-box" data-animate-effect="fadeIn">
-						<div href="#"><img src= <%=photoUrl %> alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
+						<div href="#"><img src="data:image/jpg;base64,<%=apartment.getBase64Image() %>" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
 						<div class="desc">
 						<span></span>
 								<h3><%= apartment.getName() %></h3>

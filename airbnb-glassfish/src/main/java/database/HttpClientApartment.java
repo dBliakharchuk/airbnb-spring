@@ -1,9 +1,11 @@
 package database;
 
-import java.lang.reflect.Type;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type; 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.*;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,7 +36,6 @@ public class HttpClientApartment {
 
     private static String apartmentServiceUrl = "http://127.0.0.1:8084/apartment";
     
-    /*Host in apartment = null but we can get email of host from ApartmentPK*/
     public static List<Apartment> getAllApartments() {
         Client client = Client.create();
         WebResource webResource = client.resource(apartmentServiceUrl);
@@ -43,6 +44,7 @@ public class HttpClientApartment {
                 .type("application/json")
                 .get(ClientResponse.class);
         
+
         String result = response.getEntity(String.class);
         return customGson.fromJson(result, new TypeToken<List<Apartment>>(){}.getType());
     }
@@ -112,7 +114,8 @@ public class HttpClientApartment {
         return customGson.fromJson(result, new TypeToken<List<Apartment>>(){}.getType());
     }
     
-    public static boolean createApartment(Apartment apartment) {
+    public static boolean createApartment(Apartment apartment) {    	
+    	apartment.setPicture(null);
     	Client client = Client.create();
     	WebResource webResource = client.resource(apartmentServiceUrl);
     	ClientResponse response = webResource
@@ -125,6 +128,7 @@ public class HttpClientApartment {
     }
     
     public static boolean updateApartment(Apartment apartment) {
+    	apartment.setPicture(null);
     	Client client = Client.create();
     	WebResource webResource = client.resource(apartmentServiceUrl);
     	ClientResponse response = webResource
@@ -137,6 +141,7 @@ public class HttpClientApartment {
     }
     
     public static boolean removeApartment(Apartment apartment) {
+    	apartment.setPicture(null);
     	Client client = Client.create();
     	WebResource webResource = client.resource(apartmentServiceUrl);
     	ClientResponse response = webResource
@@ -152,19 +157,29 @@ public class HttpClientApartment {
     
     public static void main(String []args) {
     	
-    	System.out.println("List of apartment***************************");
+    	System.out.println("List of apartment****************1***********");
     	List<Apartment> listAp = getAllApartments();
-    	Apartment newAp = listAp.get(6);
-    	ApartmentPK idAp = newAp.getId();
-    	
-    	
+    	System.out.println("Size of list apartment: " + listAp.size());
+    	for(Apartment ap:listAp) {
+   		 System.out.println(ap.getName());
+   		 System.out.println("------------------------------------");
+   	 }
+    	Apartment tempAp = listAp.get(0);
+    	/*byte[] imageBytes = tempAp.getPicture();
+    	String base64Image = java.util.Base64.getEncoder().encodeToString(imageBytes);
+    	System.out.println(tempAp.getBase64Image());*/
+    	tempAp.setPicture(null);
+    	tempAp.setCity("Cracow");
+    	/*tempAp.setName("Create new apartment without Picture");
+    	System.out.println(createApartment(tempAp));*/
+    	removeApartment(tempAp);
+    	System.out.println("Apartment after change*******************************");
     	listAp = getAllApartments();
     	for(Apartment ap:listAp) {
-    		 System.out.println(ap);
-    		 System.out.println("------------------------------------");
-    	 }
-    	System.out.println("*****************get Apartment by id");
-    	System.out.println(getApartmentById(idAp));
+      		 System.out.println(ap.getName());
+      		 System.out.println("------------------------------------");
+      	 }
+ 
     }
 
   

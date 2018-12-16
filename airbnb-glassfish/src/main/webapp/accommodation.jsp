@@ -54,6 +54,10 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/contacHost.js"></script>
+	
+	
+	
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -66,10 +70,9 @@
 
 		<!-- start:header-top -->
 			<%
-			String emailOfLoggedUser = (String) request.getSession().getAttribute("emailOfLoggedUser"); 		
-			if (emailOfLoggedUser != null) { %>
+				String emailOfLoggedUser = (String) request.getSession().getAttribute("emailOfLoggedUser"); 		
+				if (emailOfLoggedUser != null) { %>
 				<jsp:include page="headerLogin.jsp"/> 
-				
 			<% } else {  %>
 				<jsp:include page="headerLogout.jsp"/>
 			<% } %>
@@ -104,6 +107,7 @@
                         <span class="description">
 						<p><%= apartment.getDescription() %></p> 
                         </span>
+                        
                         <table class="table">
                             <tbody>
                             	<tr>
@@ -139,12 +143,12 @@
                         	</div>
                         	</form>
                         <div class="col-xxs-12 col-xs-6 mt">
-                            <input type="contact" class="btn btn-primary btn-block" value="Contact">
+                            <input type="contact" class="btn btn-primary btn-block" value="Contact" onclick="contactHost('<%= apartment.getHost().getEmail() %>', '<%= emailOfLoggedUser%>')">                 
                         </div>
                                                                         
                     </div>
 					<div class="col-md-6 ">
-						<img class="img-responsive" src=<%=photoUrl %> alt="travel">
+						<img class="img-responsive" src="data:image/jpg;base64,<%=apartment.getBase64Image() %> alt="travel">
 					</div>
 				</div>
 			</div>

@@ -1,8 +1,10 @@
 package model;
 
+import java.beans.Transient;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -57,6 +59,11 @@ public class Apartment implements Serializable {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="apartment")
 	private List<Reservation> reservations;
+	
+    @Transient
+    public String getBase64Image() {
+    	return Base64.getEncoder().encodeToString(this.picture);
+    }
 
 	public Apartment() {
 	}
@@ -75,7 +82,7 @@ public class Apartment implements Serializable {
 		this.name = name;
 		this.price = price;
 		this.type = type;
-	}/*in this case host is null*/
+	}
 
 
 

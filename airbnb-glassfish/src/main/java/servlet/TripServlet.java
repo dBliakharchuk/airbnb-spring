@@ -46,7 +46,6 @@ public class TripServlet extends HttpServlet {
 			String emailOfLoggedUser = (String) request.getSession().getAttribute("emailOfLoggedUser"); 
 			if (emailOfLoggedUser != null) {
 				List<Trip> tripsList = TripLogic.getUserTrips(DataAccess.getUserByEmail(emailOfLoggedUser));
-				System.out.println("**************************************************************\n"+tripsList.get(0));
 				request.setAttribute("userTrips", tripsList);
 				
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/trips.jsp"); 

@@ -24,4 +24,10 @@ Reservation Module : 8085 <br/>
 |:-----| ---------|:--------------|:------------|:-----------------------------|:--------------------------------------------|
 |bank/ | POST     |               | PaymentInfo | validate credit card         | Response.200 (true) or Response.402 (false) |
 
+##### User Module
+| Url  | Method   | Parameters    | Body | Description                  | Returns                                   |
+|:-----| ---------|:--------------|:-----|:-----------------------------|:------------------------------------------|
+|user/ | GET      | email         |      | getNewestMessagesByEmaill    | newest messages                           |
+|user/ | GET      | email selectedUser|      | getConversation | messages between users |
+|user/ | PUT      |               | message | createMessage       | create message                              |
 

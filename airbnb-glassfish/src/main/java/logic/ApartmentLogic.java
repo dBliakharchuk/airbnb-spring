@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import database.DataAccess;
+import database.HttpClientUser;
 import model.Apartment;
 import model.ApartmentPK;
 import model.ApartmentType;
@@ -205,11 +206,17 @@ public class ApartmentLogic {
 		user.setReservations(new ArrayList(new HashSet(userReservations)));
 		apartment.setReservations(new ArrayList(bookings.values()));
 		
-		DataAccess.updateApartment(apartment);
-		DataAccess.updateUser(user);
-		for (Reservation r : reservations) DataAccess.createReservation(r);
+		boolean updatedAp = DataAccess.updateApartment(apartment);
+		boolean updatedUs = DataAccess.updateUser(user);
+		boolean createdRes = true;
+		for (Reservation r : reservations) {
+			
+			if (!DataAccess.createReservation(r)) {
+				createdRes = false;
+			}
+		}
 		
-		return true;
+		return updatedAp && updatedUs && createdRes;
 	}
 	
 	public static boolean addApartment(Apartment apartment) {
@@ -237,6 +244,9 @@ public class ApartmentLogic {
 			return false;
 		}
 		Apartment toDelete = DataAccess.getApartmentById(apartmentPk);
+		if (toDelete == null) {
+			return false;
+		}
 		return removeApartment(toDelete);
 	}
 	
@@ -244,10 +254,14 @@ public class ApartmentLogic {
 		if (apartment == null) {
 			return false;
 		}
+
 		
-		User host = apartment.getHost();
+		User host = HttpClientUser.getUserByEmail(apartment.getHost().getEmail());
 		host.removeApartment(apartment);
+		System.out.println("3");
 		DataAccess.updateUser(host);
+		System.out.println("4");
+
 				
 		return DataAccess.removeApartment(apartment);
 	}

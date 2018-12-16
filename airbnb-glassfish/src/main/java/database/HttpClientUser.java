@@ -1,6 +1,8 @@
 package database;
 
 import java.lang.reflect.Type;
+import java.net.ConnectException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -19,9 +21,12 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientHandlerException;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
+import model.Apartment;
+import model.Message;
 import model.User;
 
 public class HttpClientUser {
@@ -31,90 +36,146 @@ public class HttpClientUser {
     private static String userServiceUrl = "http://127.0.0.1:8081/user";
 
     public static List<User> getAllUsers() {
-        Client client = Client.create();
-        WebResource webResource = client.resource(userServiceUrl);
-        ClientResponse response = webResource
-                .accept("application/json")
-                .type("application/json")
-                .get(ClientResponse.class);
+    	String result = null;
+        try {
+        	Client client = Client.create();
+        	WebResource webResource = client.resource(userServiceUrl);
+            ClientResponse response = webResource
+                    .accept("application/json")
+                    .type("application/json")
+                    .get(ClientResponse.class);
+            
+            result = response.getEntity(String.class);
+        } catch (ClientHandlerException ex) {
+        	System.out.println("HttpClientUser exception: there was problem with connection");
+        	return new ArrayList<>();
+        }
         
-        String result = response.getEntity(String.class);
         return customGson.fromJson(result, new TypeToken<List<User>>(){}.getType());
     }
 
     public static User getUserByEmail(String email) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(userServiceUrl);
-        ClientResponse response = webResource
-                .queryParam("email", email)
-                .accept("application/json")
-                .type("application/json")
-                .get(ClientResponse.class);
+    	String result = null;
+        try {
+        	Client client = Client.create();
+            WebResource webResource = client.resource(userServiceUrl);
+            ClientResponse response = webResource
+                    .queryParam("email", email)
+                    .accept("application/json")
+                    .type("application/json")
+                    .get(ClientResponse.class);
 
-        String result = response.getEntity(String.class);
+            result = response.getEntity(String.class);
+        } catch (ClientHandlerException ex) {
+        	System.out.println("HttpClientUser exception: there was problem with connection");
+        	return null;
+        }
+        
         return customGson.fromJson(result, User.class);
     }
 
     public static List<User> getUsersByNameSurname(String name, String surname) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(userServiceUrl);
-        ClientResponse response = webResource
-                .queryParam("name", name)
-                .queryParam("surname", surname)
-                .accept("application/json")
-                .type("application/json")
-                .get(ClientResponse.class);
+    	String result = null;
+        try {
+        	Client client = Client.create();
+            WebResource webResource = client.resource(userServiceUrl);
+            ClientResponse response = webResource
+                    .queryParam("name", name)
+                    .queryParam("surname", surname)
+                    .accept("application/json")
+                    .type("application/json")
+                    .get(ClientResponse.class);
 
-        String result = response.getEntity(String.class);
+            result = response.getEntity(String.class);
+        } catch (ClientHandlerException ex) {
+        	System.out.println("HttpClientUser exception: there was problem with connection");
+        	return new ArrayList<>();
+        }
+        
+        
         return customGson.fromJson(result, new TypeToken<List<User>>(){}.getType());
     }
 
     public static boolean updateUser(User user) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(userServiceUrl);
-        ClientResponse response = webResource
-                .accept("application/json")
-                .type("application/json")
-                .post(ClientResponse.class, customGson.toJson(user));
+    	String result = null;
+        try {
+        	Client client = Client.create();
+            WebResource webResource = client.resource(userServiceUrl);
+            ClientResponse response = webResource
+                    .accept("application/json")
+                    .type("application/json")
+                    .post(ClientResponse.class, customGson.toJson(user));
 
-        String result = response.getEntity(String.class);
+            result = response.getEntity(String.class);
+        } catch (ClientHandlerException ex) {
+        	System.out.println("HttpClientUser exception: there was problem with connection");
+        	return false;
+        }
+        
+        
         return Boolean.valueOf(result);
     }
 
     public static User createOrUpdateUser(User user) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(userServiceUrl);
-        ClientResponse response = webResource
-                .accept("application/json")
-                .type("application/json")
-                .put(ClientResponse.class, customGson.toJson(user));
+    	String result = null;
+        try {
+        	Client client = Client.create();
+            WebResource webResource = client.resource(userServiceUrl);
+            ClientResponse response = webResource
+                    .accept("application/json")
+                    .type("application/json")
+                    .put(ClientResponse.class, customGson.toJson(user));
 
-        String result = response.getEntity(String.class);
+
+            result = response.getEntity(String.class);
+        } catch (ClientHandlerException ex) {
+        	System.out.println("HttpClientUser exception: there was problem with connection");
+        	return null;
+        }
+  
+    	
+        
         return customGson.fromJson(result, User.class);
     }
 
     public static boolean deleteUserByEmial(String email) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(userServiceUrl);
-        ClientResponse response = webResource
-                .queryParam("email", email)
-                .accept("application/json")
-                .type("application/json")
-                .delete(ClientResponse.class);
+    	String result = null;
+        try {
+        	Client client = Client.create();
+            WebResource webResource = client.resource(userServiceUrl);
+            ClientResponse response = webResource
+                    .queryParam("email", email)
+                    .accept("application/json")
+                    .type("application/json")
+                    .delete(ClientResponse.class);
 
-        String result = response.getEntity(String.class);
+            result = response.getEntity(String.class);
+        } catch (ClientHandlerException ex) {
+        	System.out.println("HttpClientUser exception: there was problem with connection");
+        	return false;
+        }
+        
+        
         return Boolean.valueOf(result);
     }
 
     public static boolean deleteUser(User user) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(userServiceUrl);
-        ClientResponse response = webResource
-                .accept("application/json")
-                .type("application/json")
-                .delete(ClientResponse.class, customGson.toJson(user));
+    	String result = null;
+        try {
+        	Client client = Client.create();
+            WebResource webResource = client.resource(userServiceUrl);
+            ClientResponse response = webResource
+                    .accept("application/json")
+                    .type("application/json")
+                    .delete(ClientResponse.class, customGson.toJson(user));
 
-        String result = response.getEntity(String.class);
+            result = response.getEntity(String.class);
+        } catch (ClientHandlerException ex) {
+        	System.out.println("HttpClientUser exception: there was problem with connection");
+        	return false;
+        }
+        
+        
         return Boolean.valueOf(result);
     }
 

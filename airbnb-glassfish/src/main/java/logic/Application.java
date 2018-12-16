@@ -23,10 +23,10 @@ public class Application {
 //		removeUserTest();
 //		sendMessageTest(DataAccess.getAllUsers().get(0), DataAccess.getAllUsers().get(1), "test");
 //		MessageLogic.notifyReceiver(Message.createNewMessage(DataAccess.getAllUsers().get(0), DataAccess.getAllUsers().get(1), "test"));
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		Date tomorrow = formatter.parse("2019-12-12");
-		PaymentInfo info = new PaymentInfo("1111222233334444", "123", tomorrow, 30.0);
-		System.out.print(HttpClientBank.isPaymentInfoValid(info));
+//		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//		Date tomorrow = formatter.parse("2019-12-12");
+//		PaymentInfo info = new PaymentInfo("1111222233334444", "123", tomorrow, 30.0);
+//		System.out.print(HttpClientBank.isPaymentInfoValid(info));
 	}
 	
 	private static void removeReservationTest() {
@@ -50,14 +50,6 @@ public class Application {
 		
 	}
 	
-	private static void removeMessageTest() {
-		User user = DataAccess.getUserByEmail("customer@gmail.com");
-		System.out.println(user.getMessagesSent().size());
-		boolean s = MessageLogic.removeMessage(user.getMessagesSent().get(0));
-		System.out.println(s);
-		System.out.println(user.getMessagesSent().size());
-		
-	}
 	
 	private static void removeUserTest() {
 		User user = DataAccess.getUserByEmail("customer@gmail.com");

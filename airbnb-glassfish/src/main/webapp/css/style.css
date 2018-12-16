@@ -763,6 +763,8 @@ div.cs-select span {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  width: 100%;
+  height: 300px;
 }
 .fh5co-tours > div:after {
   opacity: 1;

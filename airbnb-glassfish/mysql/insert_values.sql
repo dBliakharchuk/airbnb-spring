@@ -50,10 +50,10 @@ VALUES('dima@gmail.com',60.0,2,'ENTIRE_APARTMENT','Apartment in Sol','Apartment 
 
 
 INSERT INTO `airbnbdb`.`Reservation`
-VALUES('customer@gmail.com','2018-8-21', 'dima@gmail.com','4','Calle de Preciados','56','Madrid','pending');
+VALUES('customer@gmail.com','2018-8-21', 'dima@gmail.com','4','Calle de Preciados','56','Madrid','Accepted');
 
 INSERT INTO `airbnbdb`.`Reservation`
-VALUES('customer@gmail.com','2018-8-21', 'piotrszylar@gmail.com','34','Gran Via','2A','Madrid','pending');
+VALUES('customer@gmail.com','2018-8-21', 'piotrszylar@gmail.com','34','Gran Via','2A','Madrid','Accepted');
 
 
 

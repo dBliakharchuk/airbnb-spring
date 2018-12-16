@@ -139,7 +139,7 @@ public class TransferServlet extends HttpServlet {
             	
             	for(Reservation r : bookingReservations) {
             		
-//            		DataAccess.createReservation(r);
+            		DataAccess.createReservation(r);
             		
         		
             		config.getServletContext().setAttribute("reservationList", bookingReservations);

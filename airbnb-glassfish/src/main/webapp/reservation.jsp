@@ -8,8 +8,8 @@
 <%@ page import="model.*" %>
 <%@ page import=" java.util.*"%>
 <%@ page import="logic.*" %>
-<%@ page import="java.text.SimpleDateFormat;" %>
-<%@ page import="java.text.DecimalFormat;" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.text.DecimalFormat" %>
 
 	<head>
 	<meta charset="utf-8">

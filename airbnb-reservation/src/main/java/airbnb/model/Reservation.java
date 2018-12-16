@@ -28,6 +28,8 @@ public class Reservation implements Serializable, Comparable<Reservation> {
 	@ManyToOne
 	@JoinColumn(name="userEmail", insertable=false, updatable=false)
 	private User user;
+	
+	private String reservationStatus;
 
 	public Reservation() {
 	
@@ -76,6 +78,14 @@ public class Reservation implements Serializable, Comparable<Reservation> {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public String getReservationStatus() {
+		return reservationStatus;
+	}
+
+	public void setReservationStatus(String reservationStatus) {
+		this.reservationStatus = reservationStatus;
 	}
 
 	@Override

@@ -14,7 +14,7 @@ import javax.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class EntryFilter
  */
-@WebFilter(urlPatterns = {"*.jsp"})
+//@WebFilter(urlPatterns = {"*.jsp"})
 public class EntryFilter implements Filter {
 
     /**

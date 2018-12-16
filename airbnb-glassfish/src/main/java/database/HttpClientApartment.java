@@ -115,6 +115,7 @@ public class HttpClientApartment {
     }
     
     public static boolean createApartment(Apartment apartment) {    	
+    	apartment.setPicture(null);
     	Client client = Client.create();
     	WebResource webResource = client.resource(apartmentServiceUrl);
     	ClientResponse response = webResource
@@ -127,6 +128,7 @@ public class HttpClientApartment {
     }
     
     public static boolean updateApartment(Apartment apartment) {
+    	 apartment.setPicture(null);
     	Client client = Client.create();
     	WebResource webResource = client.resource(apartmentServiceUrl);
     	ClientResponse response = webResource
@@ -152,33 +154,6 @@ public class HttpClientApartment {
     }
         
     
-    
-    public static void main(String []args) {
-    	
-    	System.out.println("List of apartment****************1***********");
-    	List<Apartment> listAp = getAllApartments();
-    	System.out.println("Size of list apartment: " + listAp.size());
-    	for(Apartment ap:listAp) {
-   		 System.out.println(ap.getName());
-   		 System.out.println("------------------------------------");
-   	 }
-    	Apartment tempAp = listAp.get(0);
-    	/*byte[] imageBytes = tempAp.getPicture();
-    	String base64Image = java.util.Base64.getEncoder().encodeToString(imageBytes);
-    	System.out.println(tempAp.getBase64Image());*/
-    	tempAp.setPicture(null);
-    	tempAp.setCity("Cracow");
-    	/*tempAp.setName("Create new apartment without Picture");
-    	System.out.println(createApartment(tempAp));*/
-    	removeApartment(tempAp);
-    	System.out.println("Apartment after change*******************************");
-    	listAp = getAllApartments();
-    	for(Apartment ap:listAp) {
-      		 System.out.println(ap.getName());
-      		 System.out.println("------------------------------------");
-      	 }
- 
-    }
 
   
 

@@ -30,6 +30,12 @@ public class ReservationApi {
     	return data.createReservation(reservation);
     }
     
+    @PutMapping(consumes = "application/json", produces = "application/json")
+    public Reservation createOrUpdatedReservation(@RequestBody Reservation reservation) {
+
+        return data.saveOrUpdateReservation(reservation);
+    }
+    
     @DeleteMapping(consumes = "application/json", produces = "application/json")
     public boolean deleteReservation(@RequestBody Reservation reservation) {
     	

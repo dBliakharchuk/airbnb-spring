@@ -32,5 +32,9 @@ public class DataAccess {
     	}
     	reservationRepository.deleteById(reservation.getId());
     	return true;
-    }  
+    } 
+    
+    public Reservation saveOrUpdateReservation(Reservation reservation) {
+        return reservationRepository.save(reservation);
+    }
 }

@@ -67,6 +67,17 @@ public class HttpClientReservation {
 		return Boolean.valueOf(result);
 	}
 	
+    public static Reservation createOrUpdateReservation(Reservation reservation) {
+        Client client = Client.create();
+        WebResource webResource = client.resource(reservationServiceUrl);
+        ClientResponse response = webResource
+                .accept("application/json")
+                .type("application/json")
+                .put(ClientResponse.class, customGson.toJson(reservation));
+
+        String result = response.getEntity(String.class);
+        return customGson.fromJson(result, Reservation.class);
+    }
 //    public static List<User> getUsersByNameSurname(String name, String surname) {
 //        Client client = Client.create();
 //        WebResource webResource = client.resource(userServiceUrl);

@@ -154,11 +154,18 @@ public class HttpClientApartment {
     	
     	System.out.println("List of apartment***************************");
     	List<Apartment> listAp = getAllApartments();
-    	Apartment newAp = listAp.get(6);
+    	System.out.println(listAp.size());
+    	Apartment newAp = listAp.get(0);
     	ApartmentPK idAp = newAp.getId();
+    	for(Apartment ap:listAp) {
+   		 System.out.println(ap);
+   		 System.out.println("------------------------------------");
+   	 }
+    	newAp.setCity("Rivne");
     	
-    	
+    	System.out.println(createApartment(newAp));
     	listAp = getAllApartments();
+    	System.out.println(listAp.size());
     	for(Apartment ap:listAp) {
     		 System.out.println(ap);
     		 System.out.println("------------------------------------");

@@ -18,16 +18,37 @@ function conversationSelected(email, selectedUser) {
 		dataType : 'jsonp'
 	}).done(function() {
 		var result = [];
-		result = data.responseJSON;
-		
-		for (var i = 0; i < result.length; i++) {
+		result = data.responseJSON;;
+			for (var i = 0; i < result.length; i++) {
 			
 			
 			var div = document.createElement('div');
-			if(String(result[i].sender.email) == String(email))
+			if(String(result[i].sender.email) == String(email)){
 				div.className = "convesations-message message-send";
-			else
+			}
+			else{
 				div.className = "convesations-message message-recived";
+				var patter = /\#\d{5,10}/;
+				var message = result[i].message;
+				var isUnread = result[i].isUnread;
+				
+				if(patter.test(message))
+				{
+					console.log()
+					var confirmationStatus;
+					if (confirm("Do you confirm the booking request? Press 'ok' to accept or 'cancel' to decline")) {
+					  confirmationStatus = "ok";
+					} 
+					else {
+						 confirmationStatus = "cancel";
+						document.getElementById("confirmationField").innerHTML = confirmationStatus;
+						}
+					document.getElementById("hiddenForm").submit();//your code here
+				}
+				
+				
+			}
+				
 			div.innerHTML = result[i].message;
 			
 			var divDate = document.createElement('div');
@@ -51,6 +72,7 @@ function conversationSelected(email, selectedUser) {
 		}
 
 	});
+
 
 	
 
@@ -76,3 +98,5 @@ function hideConvesationViwe() {
     $("#conversation-view").hide();
 
 }
+
+     

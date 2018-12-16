@@ -1,6 +1,7 @@
 package airbnb.api;
 
 import airbnb.model.PaymentInfo;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,7 @@ public class BankApi {
     }
 
     private boolean isPaymentValid(PaymentInfo info) {
+    	
         return info.getNumber().replaceAll("\\s","").length() == 16
                 && info.getNumber().replaceAll("\\s","").
                     replaceAll("\\d","").length() == 0
@@ -30,6 +32,6 @@ public class BankApi {
                 && info.getCvc().replaceAll("\\s","").
                     replaceAll("\\d","").length() == 0
                 && info.getExpiration().after(new Date());
-
+//
     }
 }

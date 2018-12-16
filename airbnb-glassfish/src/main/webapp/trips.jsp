@@ -115,7 +115,7 @@
 							ArrayList<Trip> tripsList = (ArrayList<Trip>) request.getAttribute("userTrips");
 							String photoUrl;
 
-							if (tripsList != null) {
+							if (tripsList != null && !tripsList.isEmpty()) {
 								for (Trip tempTrip : tripsList){
 									Apartment tempApartment = tempTrip.getReservations().get(0).getApartment();
 									if (tempApartment != null){ 
@@ -127,9 +127,7 @@
 								<div class="col-md-4 col-sm-6 fh5co-tours animate-box"
 									data-animate-effect="fadeIn">
 									<div href="#">
-										<img src=<%=photoUrl %>
-											alt="Free HTML5 Website Template by FreeHTML5.co"
-											class="img-responsive">
+										<div href="#"><img src="data:image/jpg;base64,<%=tempApartment.getBase64Image() %>" alt="Free HTML5 Website Template by FreeHTML5.co" class="img-responsive">
 										<div class="desc">
 											<span></span>
 											<h3><%= tempApartment.getCity() %></h3>

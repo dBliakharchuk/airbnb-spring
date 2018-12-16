@@ -70,6 +70,7 @@ public class MessageApi
 
 		return data.saveMessage(message);
 	}
+	
 
 	@GetMapping(path = "/sent")
 	public Iterable<Message> getSentMessages(@RequestParam("email") String email)

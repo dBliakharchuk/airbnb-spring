@@ -115,7 +115,6 @@ public class HttpClientApartment {
     }
     
     public static boolean createApartment(Apartment apartment) {    	
-    	apartment.setPicture(null);
     	Client client = Client.create();
     	WebResource webResource = client.resource(apartmentServiceUrl);
     	ClientResponse response = webResource
@@ -128,7 +127,6 @@ public class HttpClientApartment {
     }
     
     public static boolean updateApartment(Apartment apartment) {
-    	apartment.setPicture(null);
     	Client client = Client.create();
     	WebResource webResource = client.resource(apartmentServiceUrl);
     	ClientResponse response = webResource

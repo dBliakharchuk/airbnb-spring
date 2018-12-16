@@ -53,8 +53,6 @@ public class MessageServlet extends HttpServlet {
 			{
 				ArrayList<Message> messages=  new ArrayList<Message> (DataAccess.getNewestMessages(email));
 
-
-				
 				request.setAttribute("messages", messages);
 				request.getRequestDispatcher("messages.jsp").forward(request, response);
 

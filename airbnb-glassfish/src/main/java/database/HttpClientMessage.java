@@ -43,8 +43,6 @@ public class HttpClientMessage {
                 .get(ClientResponse.class);
 
         String result = response.getEntity(String.class);
-        if(result!=null)
-        	System.out.println(result);
         return customGson.fromJson(result,  new TypeToken<List<Message>>(){}.getType());
     }
     
@@ -60,8 +58,6 @@ public class HttpClientMessage {
                 .get(ClientResponse.class);
 
         String result = response.getEntity(String.class);
-        if(result!=null)
-        	System.out.println(result);
         return customGson.fromJson(result,  new TypeToken<List<Message>>(){}.getType());
     }
     
@@ -74,25 +70,7 @@ public class HttpClientMessage {
     		     .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS")
     		     .create();
     	
-    	String messageJson = "{\n" + 
-    			"    \"id\": {\n" + 
-    			"        \"sender\": \""+ message.getSender().getEmail()+ "\",\n" + 
-    			"        \"receiver\": \"" + message.getReceiver().getEmail()+  "\"\n" + 
-    			"    },\n" + 
-    			"    \"isUnread\": true,\n" + 
-    			"    \"sender\": null,\n" + 
-    			"    \"receiver\": null,\n" + 
-    			"    \"message\": \""+ message.getMessage() +"\",\n" + 
-    			"    \"date\": \""+"2018-11-18T22:42:30.000+0000" + "\"\n" + 
-    			"}";
-    	
-    //	System.out.println("Gson" + gson.toJson(message));
-    	
-    	 
-    	//User reciver = DataAccess.getUserByEmail(message.getReceiver().getEmail()); 
-    	//System.out.println("reciver"+reciver);
-    	
-    	
+
         Client client = Client.create();
         WebResource webResource = client.resource(messageServiceUrl);
         ClientResponse response = webResource

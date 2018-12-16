@@ -246,7 +246,8 @@ public class ApartmentLogic {
 			return false;
 		}
 		
-		User host = apartment.getHost();
+		User host = HttpClientUser.getUserByEmail(apartment.getHost().getEmail());
+		//User host = apartment.getHost();
 		host.removeApartment(apartment);
 		DataAccess.updateUser(host);
 				

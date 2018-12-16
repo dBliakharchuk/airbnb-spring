@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 import database.DataAccess;
+import database.HttpClientUser;
 import model.Apartment;
 import model.ApartmentPK;
 import model.ApartmentType;

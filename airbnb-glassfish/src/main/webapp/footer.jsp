@@ -4,49 +4,44 @@
 			<div class="row row-bottom-padded-md">
 				<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
 					<h3>About TIWbnb</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor enim et libero pharetra, Nam ipsum augue, eleifend ut dui eu, egestas malesuada velit. </p>
+					<p>Airbnb is an online community marketplace that connects people looking to rent their homes with people who are looking for accommodations. </p>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-					<h3>Lorem ipsum </h3>
+					<h3>Airbnb</h3>
 					<ul>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Press</a></li>
+						<li><a href="#">Policies</a></li>
+						<li><a href="#">Help</a></li>
+						<li><a href="#">Diversity & Belonging</a></li>
 					</ul>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-					<h3>Lorem ipsum </h3>
+					<h3>Discover </h3>
 					<ul>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
+						<li><a href="#">Trust & Safety</a></li>
+						<li><a href="#">Invite Friend</a></li>
+						<li><a href="#">Business Travel</a></li>
+						<li><a href="#">Gift Cards</a></li>
+						<li><a href="#">Events</a></li>
 					</ul>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-					<h3>Lorem ipsum </h3>
+					<h3>Hosting </h3>
 					<ul>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
+						<li><a href="#">Why Host</a></li>
+						<li><a href="#">Refer Host</a></li>
+						<li><a href="#">Hospitality</a></li>
+						<li><a href="#">Host an Experience</a></li>
+						<li><a href="#">Open Homes</a></li>
 					</ul>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-					<h3>Lorem ipsum </h3>
+					<h3>Additional information</h3>
 					<ul>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
-					</ul>
-				</div>
-				<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
-					<h3>Lorem ipsum </h3>
-					<ul>
-						<li><a href="#">Xxxxx xxxx</a></li>
-						<li><a href="#">Xxxxx xxxx</a></li>
+						<li><a href="#">Terms</a></li>
+						<li><a href="#">Privacy</a></li>
+						<li><a href="#">Site Map</a></li>
 					</ul>
 				</div>
 			</div>

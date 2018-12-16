@@ -49,11 +49,17 @@ public class UserLogic {
 			return false;
 		}
 		User toDelete = DataAccess.getUserByEmail(email);
+		if (toDelete == null) {
+			return false;
+		}
 		return removeUser(toDelete);
 	}
 	
 	public static boolean changeUserName(String email, String name) {
 		User toChange = DataAccess.getUserByEmail(email);
+		if (toChange == null) {
+			return false;
+		}
 		toChange.setName(name);
 		if (!isUserValid(toChange)) {
 			return false;
@@ -63,6 +69,9 @@ public class UserLogic {
 	
 	public static boolean changeUserSurname(String email, String surname) {
 		User toChange = DataAccess.getUserByEmail(email);
+		if (toChange == null) {
+			return false;
+		}
 		toChange.setSurname(surname);
 		if (!isUserValid(toChange)) {
 			return false;
@@ -72,6 +81,9 @@ public class UserLogic {
 	
 	public static boolean changeUserPassword(String email, String password) {
 		User toChange = DataAccess.getUserByEmail(email);
+		if (toChange == null) {
+			return false;
+		}
 		toChange.setPassword(password);
 		if (!isUserValid(toChange)) {
 			return false;
@@ -82,6 +94,9 @@ public class UserLogic {
 	
 	public static boolean changeUserPhone(String email, String phone) {
 		User toChange = DataAccess.getUserByEmail(email);
+		if (toChange == null) {
+			return false;
+		}
 		toChange.setPhone(phone);
 		if (!isUserValid(toChange)) {
 			return false;

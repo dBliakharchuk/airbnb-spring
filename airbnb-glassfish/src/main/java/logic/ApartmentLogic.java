@@ -245,11 +245,14 @@ public class ApartmentLogic {
 		if (apartment == null) {
 			return false;
 		}
+
 		
 		User host = HttpClientUser.getUserByEmail(apartment.getHost().getEmail());
-		//User host = apartment.getHost();
 		host.removeApartment(apartment);
+		System.out.println("3");
 		DataAccess.updateUser(host);
+		System.out.println("4");
+
 				
 		return DataAccess.removeApartment(apartment);
 	}

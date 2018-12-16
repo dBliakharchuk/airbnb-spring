@@ -50,14 +50,6 @@ public class Application {
 		
 	}
 	
-	private static void removeMessageTest() {
-		User user = DataAccess.getUserByEmail("customer@gmail.com");
-		System.out.println(user.getMessagesSent().size());
-		boolean s = MessageLogic.removeMessage(user.getMessagesSent().get(0));
-		System.out.println(s);
-		System.out.println(user.getMessagesSent().size());
-		
-	}
 	
 	private static void removeUserTest() {
 		User user = DataAccess.getUserByEmail("customer@gmail.com");

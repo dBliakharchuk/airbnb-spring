@@ -22,6 +22,8 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
+import model.Apartment;
+import model.Message;
 import model.User;
 
 public class HttpClientUser {
@@ -82,12 +84,16 @@ public class HttpClientUser {
     }
 
     public static User createOrUpdateUser(User user) {
+    	
+  
+    	
         Client client = Client.create();
         WebResource webResource = client.resource(userServiceUrl);
         ClientResponse response = webResource
                 .accept("application/json")
                 .type("application/json")
                 .put(ClientResponse.class, customGson.toJson(user));
+
 
         String result = response.getEntity(String.class);
         return customGson.fromJson(result, User.class);

@@ -8,7 +8,10 @@
 <%@ page import="model.*" %>
 <%@ page import=" java.util.*"%>
 <%@ page import="logic.*" %>
+<%@ page import="database.*" %>
 <%@ page import="java.text.*" %>
+<%@ page import = "java.util.regex.Matcher" %>
+<%@ page import = "java.util.regex.Pattern" %>
 
 
 
@@ -127,7 +130,7 @@
 												String messageId;
 												String senderId;
 												String converationPartner;
-												
+
 												for (Message message : messages)
 												{
 													isUnread = message.getIsUnread();
@@ -162,7 +165,7 @@
 											<td>      
 													<div class="media" onclick="showMessage()">
 														<p class="summary"><%= message.getMessage()	%></p>
-														<p class="meta"><%= message.getDate()%></p>                                             
+														<p class="meta"><%= message.getDate()%></p>                                          
 													</div>
 													<button type="button" class="btn btn-success" onclick="reply(<%= messageId%>)" style="float:right; margin-top: -30px; margin-right: 20px;">Reply</button>
 
@@ -180,6 +183,9 @@
 										                                
 									</tbody>
 								</table>
+								<form name="hiddenForm" id="hiddenForm" action="confirmation" method="post">
+									<input name="confirmationField" id="confirmationField" type="text" hidden>
+								</form>
 							</div>
 						</div>
 					</div>

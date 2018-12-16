@@ -9,6 +9,7 @@
 <%@ page import=" java.util.*"%>
 <%@ page import="logic.*" %>
 <%@ page import="java.text.SimpleDateFormat;" %>
+<%@ page import="java.text.DecimalFormat;" %>
 
 	<head>
 	<meta charset="utf-8">
@@ -63,7 +64,7 @@
 	<![endif]-->
 
 	</head>
-	<body  onload="setInitialDates()">
+	<body  onload="setInitialData()">
 		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 
@@ -87,7 +88,9 @@
 		<% 	Apartment apartment = (Apartment)request.getSession().getAttribute("selectedApartment"); 
 			
 			String dateStart = request.getSession().getAttribute("dateStart").toString();
-			String dateEnd = request.getSession().getAttribute("dateEnd").toString();	%>
+			String dateEnd = request.getSession().getAttribute("dateEnd").toString();	
+			
+			DecimalFormat df = new DecimalFormat("0.00");%>
 			
 		 <div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
@@ -137,7 +140,7 @@
 									</div>
 										<div id="reservation-price" >
 											<span>Price:</span>
-											<span id="priceToDisplay"><%= String.format ("%.2f", ApartmentLogic.countTotalPrice(dateStart, dateEnd, apartment)) %> </span>€
+											<span id="priceToDisplay"><%= String.format("%.2f", ApartmentLogic.countTotalPrice(dateStart, dateEnd, apartment)).replaceAll(",",".") %> </span>€
 										</div>
 									<div style="clear:both;"></div>
 									<br/>
@@ -212,10 +215,11 @@
               $("#RegistroModal").modal("hide");
               $("#loginModal").modal("show");              
         });
-		function setInitialDates(){
+		function setInitialData(){
         	
         	actualDateStart = document.getElementById("date-start-reservation").value;
         	actualDateEnd = document.getElementById("date-end-reservation").value;
+        	document.getElementById("totalPrice").value = document.getElementById("priceToDisplay").textContent;
         }
         function isDateInputCorrect(){
         	
@@ -237,7 +241,8 @@
         		var pricePerNight = document.getElementById("apartmentPrice").value;
         		var totalCost = daysBetweenTwoDates(actualDateStart, actualDateEnd) * pricePerNight;
         		document.getElementById("totalPrice").value = totalCost;
-        		document.getElementById("priceToDisplay").textContent = totalCost;
+        		document.getElementById("priceToDisplay").textContent = parseFloat(Math.round(totalCost * 100) / 100).toFixed(2);
+        		
         	}
         }
         function dateCompare(dateStart, dateEnd){

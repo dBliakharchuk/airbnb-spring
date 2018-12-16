@@ -190,7 +190,7 @@ public class ApartmentLogic {
 		List<Date> dates = DateUtils.getDatesBetween(start, end);
 		
 		for (Date date : dates) {
-			Reservation reservation = new Reservation(user, apartment, date);
+			Reservation reservation = new Reservation(user, apartment, date,"pending");
 			reservations.add(reservation);
 			
 			if (bookings.containsKey(date)) {

@@ -195,7 +195,27 @@
 	<!-- CS Select -->
 	<script src="js/classie.js"></script>
 	<script src="js/selectFx.js"></script>
+    
+    
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
+
         
+    <script>
+          $(document).on('click', '#Login', function () {
+              $("#loginModal").modal("show");
+           });
+          $(document).on('click', '#Registro', function () {
+              $("#RegistroModal").modal("show");
+           });
+        
+        $(document).on('click', '#goRegistroLogin', function () {
+              $("#RegistroModal").modal("hide");
+              $("#loginModal").modal("show");              
+           });
+		
+    </script>
+    
 	</body>
 </html>
 

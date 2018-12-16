@@ -212,7 +212,6 @@ public class HttpClientApartment {
     	return customGson.fromJson(result, Boolean.class);
     }
         
-    
 
   
 

@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `airbnbdb`.`Reservation` (
   `apartmentStreet` VARCHAR(150) NOT NULL,
   `apartmentFlatNumber` VARCHAR(20) NOT NULL,
   `apartmentCity` VARCHAR(100) NOT NULL,
+  `reservationStatus` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`userEmail`, `apartmentHost`, `apartmentBuildingNumber`, `apartmentStreet`, `apartmentFlatNumber`, `apartmentCity`, `date`),
   INDEX `account_email_idx` (`userEmail` ASC),
   INDEX `fk_Reservation_Apartment1_idx` (`apartmentHost` ASC, `apartmentBuildingNumber` ASC, `apartmentStreet` ASC, `apartmentFlatNumber` ASC, `apartmentCity` ASC),

@@ -38,22 +38,26 @@ public class Reservation implements Serializable, Comparable<Reservation> {
 	@ManyToOne
 	@JoinColumn(name="userEmail")
 	private User user;
+	
+	private String reservationStatus;
 
 	public Reservation() {
 	
 	}
 
-	public Reservation(ReservationPK id, Apartment apartment, User user) {
+	public Reservation(ReservationPK id, Apartment apartment, User user, String reservationStatus) {
 		super();
 		this.id = id;
 		this.apartment = apartment;
 		this.user = user;
+		this.reservationStatus = reservationStatus;
 	}
 	
-	public Reservation(User user, Apartment apartment, Date date) {
+	public Reservation(User user, Apartment apartment, Date date, String reservationStatus) {
 		this.id = new ReservationPK(user, apartment, date);
 		this.apartment = apartment;
 		this.user = user;
+		this.reservationStatus = reservationStatus;
 	}
 
 	public ReservationPK getId() {
@@ -87,10 +91,19 @@ public class Reservation implements Serializable, Comparable<Reservation> {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	public String getReservationStatus() {
+		return this.reservationStatus;
+	}
+
+	public void setReservation(String reservationStatus) {
+		this.reservationStatus = reservationStatus;
+	}
 
 	@Override
 	public String toString() {
-		return "Reservation [id=" + id.toString() + ", apartment=" + apartment + ", user=" + user + "]";
+		return "Reservation [id=" + id.toString() + ", apartment=" + apartment + ", user=" + user +
+				", status=" + reservationStatus + "]";
 	}
 
 	@Override
@@ -103,7 +116,4 @@ public class Reservation implements Serializable, Comparable<Reservation> {
 			return 0;
 		}
 	}
-	
-	
-
 }

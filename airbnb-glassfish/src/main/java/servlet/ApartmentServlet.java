@@ -56,6 +56,7 @@ public class ApartmentServlet extends HttpServlet
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		System.out.println("PostApatrment");
 		PrintWriter writer = response.getWriter();
 		String action = request.getParameter("action");
 		String emailOfLoggedUser = (String) request.getSession().getAttribute("emailOfLoggedUser");
@@ -140,17 +141,23 @@ public class ApartmentServlet extends HttpServlet
 
 		} else if ("deletePlace".equals(action))
 		{
+			
+			System.out.println("deletePlace");
+
 
 			String email = request.getParameter("email");
 			String buildingNumber = request.getParameter("building_number");
 			String street = request.getParameter("street");
 			String flatNumber = request.getParameter("flat_number");
 			String city = request.getParameter("city");
+			
+			System.out.println(email + buildingNumber + street + flatNumber + city);
+
 
 			ApartmentPK apartmentPK = new ApartmentPK(email, buildingNumber, street, flatNumber, city);
 			Boolean apartmentDeletedtatus = ApartmentLogic.removeApartment(apartmentPK);
 
-			System.out.println(email + buildingNumber + street + flatNumber + city + apartmentDeletedtatus);
+			//System.out.println(email + buildingNumber + street + flatNumber + city + apartmentDeletedtatus);
 
 			
 			int apartmentDeletedtatusInt = apartmentDeletedtatus ? 1 : 0;

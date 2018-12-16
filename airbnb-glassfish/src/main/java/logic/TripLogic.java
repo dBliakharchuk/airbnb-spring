@@ -27,13 +27,13 @@ public class TripLogic {
 		
 		User user = reservation.getUser();
 		user.removeReservation(reservation);
-		DataAccess.updateUser(user);
+		boolean updatedUs = DataAccess.updateUser(user);
 		
 		Apartment apartment = reservation.getApartment();
 		apartment.removeReservation(reservation);
-		DataAccess.updateApartment(apartment);
 		
-		return DataAccess.removeReservation(reservation);
+		
+		return updatedUs && DataAccess.updateApartment(apartment) && DataAccess.removeReservation(reservation);
 	}
 	
 	public static List<Trip> getUserTrips(User user) {

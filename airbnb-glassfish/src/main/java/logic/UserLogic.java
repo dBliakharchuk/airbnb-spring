@@ -110,6 +110,9 @@ public class UserLogic {
 		}
 		
 		List<Reservation> reservations = DataAccess.getAllReservations();
+		if (reservations == null) {
+			return new HashSet<>();
+		}
 		Set<Apartment> apartmentsRented = new HashSet<>();
 		for (Reservation r : reservations) {
 			if (r.getUser().equals(user)) {

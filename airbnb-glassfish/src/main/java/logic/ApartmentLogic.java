@@ -206,11 +206,17 @@ public class ApartmentLogic {
 		user.setReservations(new ArrayList(new HashSet(userReservations)));
 		apartment.setReservations(new ArrayList(bookings.values()));
 		
-		DataAccess.updateApartment(apartment);
-		DataAccess.updateUser(user);
-		for (Reservation r : reservations) DataAccess.createReservation(r);
+		boolean updatedAp = DataAccess.updateApartment(apartment);
+		boolean updatedUs = DataAccess.updateUser(user);
+		boolean createdRes = true;
+		for (Reservation r : reservations) {
+			
+			if (!DataAccess.createReservation(r)) {
+				createdRes = false;
+			}
+		}
 		
-		return true;
+		return updatedAp && updatedUs && createdRes;
 	}
 	
 	public static boolean addApartment(Apartment apartment) {
@@ -238,6 +244,9 @@ public class ApartmentLogic {
 			return false;
 		}
 		Apartment toDelete = DataAccess.getApartmentById(apartmentPk);
+		if (toDelete == null) {
+			return false;
+		}
 		return removeApartment(toDelete);
 	}
 	

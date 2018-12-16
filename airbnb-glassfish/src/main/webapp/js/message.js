@@ -26,8 +26,20 @@ function conversationSelected(email, selectedUser) {
 			var div = document.createElement('div');
 			if(String(result[i].sender.email) == String(email))
 				div.className = "convesations-message message-send";
-			else
+			else{
 				div.className = "convesations-message message-recived";
+				var patter = "\\#\\d{5,10}";
+				var message = result[i].message;
+				var isUnread = result[i].isUnread;
+				
+				if((isUnread == "true") && message.includes(patter))
+				{
+					//your code here
+				}
+				
+				
+			}
+				
 			div.innerHTML = result[i].message;
 			
 			var divDate = document.createElement('div');

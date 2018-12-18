@@ -80,6 +80,15 @@
 			alert("<%=msgBox.toString()%>")
 		</script>
 		<% } %>
+		
+		<%String dataError = (String)request.getAttribute("");
+			
+					if(dataError!=null){ %>
+				
+						<script type="text/javascript">
+							alert("<%= dataError%>")
+						</script>
+					<% } %>
 		<!-- endTest -->
 		<div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>

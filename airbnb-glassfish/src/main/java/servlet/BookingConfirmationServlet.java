@@ -1,4 +1,4 @@
-package servlet;
+	package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -76,7 +76,7 @@ public class BookingConfirmationServlet extends HttpServlet {
             		DataAccess.updateReservation(r);
             	}
        		
-        		textMessage ="#" + bookingReservations.get(0).hashCode() + "\n\nHello User!\nThe host " 
+        		textMessage ="Hello User!\nThe host " 
         				+ user.getName() + " " + user.getSurname() + " (" + user.getEmail() 
         				+") accepted your reservation of '" + apartment.getName() + "' (address: " 
         				+ apartmentPK.getStreet() + " " + apartmentPK.getBuildingNumber() 
@@ -92,7 +92,7 @@ public class BookingConfirmationServlet extends HttpServlet {
             		DataAccess.removeReservation(r);
 				}
 				
-				textMessage ="#" + bookingReservations.get(0).hashCode() + "\n\nHello User!\nThe host " 
+				textMessage ="Hello User!\nThe host " 
         				+ user.getName() + " " + user.getSurname() + " (" + user.getEmail() 
         				+") declined your reservation of '" + apartment.getName() + "' (address: " 
         				+ apartmentPK.getStreet() + " " + apartmentPK.getBuildingNumber() 

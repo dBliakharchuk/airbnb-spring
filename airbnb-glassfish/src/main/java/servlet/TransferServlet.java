@@ -139,9 +139,9 @@ public class TransferServlet extends HttpServlet {
             	
             	for(Reservation r : bookingReservations) {
             		
-//            		DataAccess.createReservation(r);
+            		DataAccess.createReservation(r);
             		
-        		
+            	}
             		config.getServletContext().setAttribute("reservationList", bookingReservations);
             		request.getSession().setAttribute("confirmationMessage", "Your booking request is pednding, " +
         				"wait for the confirmation message from the host");
@@ -151,4 +151,3 @@ public class TransferServlet extends HttpServlet {
             }
 		}
 	}
-}

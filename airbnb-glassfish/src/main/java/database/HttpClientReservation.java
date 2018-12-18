@@ -1,6 +1,7 @@
 package database;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -19,6 +20,7 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientHandlerException;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
@@ -32,6 +34,8 @@ public class HttpClientReservation {
     private static String reservationServiceUrl = "http://127.0.0.1:8085/reservation";
 
     public static List<Reservation> getAllReservations() {
+    	String result = null;
+    	try {
         Client client = Client.create();
         WebResource webResource = client.resource(reservationServiceUrl);
         ClientResponse response = webResource
@@ -39,11 +43,17 @@ public class HttpClientReservation {
                 .type("application/json")
                 .get(ClientResponse.class);
         
-        String result = response.getEntity(String.class);
+        result = response.getEntity(String.class);
+    } catch (ClientHandlerException ex) {
+    	System.out.println("HttpClientReservation exception: there was problem with connection");
+    	return new ArrayList<Reservation>();
+    }
         return customGson.fromJson(result, new TypeToken<List<Reservation>>(){}.getType());
     }
 
     public static Reservation createReservation(Reservation reservation) {
+    	String result = null;
+    	try {
         Client client = Client.create();
         WebResource webResource = client.resource(reservationServiceUrl);
         ClientResponse response = webResource
@@ -51,11 +61,17 @@ public class HttpClientReservation {
                 .type("application/json")
                 .put(ClientResponse.class, customGson.toJson(reservation));
 
-        String result = response.getEntity(String.class);
+        result = response.getEntity(String.class);
+    	} catch (ClientHandlerException ex) {
+        	System.out.println("HttpClientReservation exception: there was problem with connection");
+        	return null;
+        }
         return customGson.fromJson(result, Reservation.class);
     }
     
 	public static boolean removeReservation(Reservation reservation) {
+		String result = null;
+		try {
 		Client client = Client.create();
 		WebResource webResource = client.resource(reservationServiceUrl);
 		ClientResponse response = webResource
@@ -63,11 +79,17 @@ public class HttpClientReservation {
 				.type("application/json")
 				.delete(ClientResponse.class, customGson.toJson(reservation));
 	
-		String result = response.getEntity(String.class);
+		result = response.getEntity(String.class);
+		} catch (ClientHandlerException ex) {
+        	System.out.println("HttpClientReservation exception: there was problem with connection");
+        	return false;
+        }
 		return Boolean.valueOf(result);
 	}
 	
     public static Reservation createOrUpdateReservation(Reservation reservation) {
+    	String result = null;
+    	try {
         Client client = Client.create();
         WebResource webResource = client.resource(reservationServiceUrl);
         ClientResponse response = webResource
@@ -75,62 +97,13 @@ public class HttpClientReservation {
                 .type("application/json")
                 .put(ClientResponse.class, customGson.toJson(reservation));
 
-        String result = response.getEntity(String.class);
+        result = response.getEntity(String.class);
+    	} catch (ClientHandlerException ex) {
+        	System.out.println("HttpClientReservation exception: there was problem with connection");
+        	return null;
+        }
         return customGson.fromJson(result, Reservation.class);
     }
-//    public static List<User> getUsersByNameSurname(String name, String surname) {
-//        Client client = Client.create();
-//        WebResource webResource = client.resource(userServiceUrl);
-//        ClientResponse response = webResource
-//                .queryParam("name", name)
-//                .queryParam("surname", surname)
-//                .accept("application/json")
-//                .type("application/json")
-//                .get(ClientResponse.class);
-//
-//        String result = response.getEntity(String.class);
-//        return customGson.fromJson(result, new TypeToken<List<User>>(){}.getType());
-//    }
-//
-//    public static boolean updateUser(User user) {
-//        Client client = Client.create();
-//        WebResource webResource = client.resource(userServiceUrl);
-//        ClientResponse response = webResource
-//                .accept("application/json")
-//                .type("application/json")
-//                .post(ClientResponse.class, customGson.toJson(user));
-//
-//        String result = response.getEntity(String.class);
-//        return Boolean.valueOf(result);
-//    }
-//
-//
-//
-//    public static boolean deleteUserByEmial(String email) {
-//        Client client = Client.create();
-//        WebResource webResource = client.resource(userServiceUrl);
-//        ClientResponse response = webResource
-//                .queryParam("email", email)
-//                .accept("application/json")
-//                .type("application/json")
-//                .delete(ClientResponse.class);
-//
-//        String result = response.getEntity(String.class);
-//        return Boolean.valueOf(result);
-//    }
-//
-//    public static boolean deleteUser(User user) {
-//        Client client = Client.create();
-//        WebResource webResource = client.resource(userServiceUrl);
-//        ClientResponse response = webResource
-//                .accept("application/json")
-//                .type("application/json")
-//                .delete(ClientResponse.class, customGson.toJson(user));
-//
-//        String result = response.getEntity(String.class);
-//        return Boolean.valueOf(result);
-//    }
-
     private static class ByteArrayToBase64TypeAdapter implements JsonSerializer<byte[]>, JsonDeserializer<byte[]> {
         public byte[] deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
             return Base64.decode(json.getAsString(), Base64.NO_WRAP);

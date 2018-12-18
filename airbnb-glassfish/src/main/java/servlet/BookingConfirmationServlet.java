@@ -1,4 +1,4 @@
-package servlet;
+	package servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -73,10 +73,10 @@ public class BookingConfirmationServlet extends HttpServlet {
             		
             		r.setReservation("Accepted");
             		
-//            		DataAccess.updateReservation(r);
+            		DataAccess.updateReservation(r);
             	}
        		
-        		textMessage ="#" + bookingReservations.get(0).hashCode() + "\n\nHello User!\nThe host " 
+        		textMessage ="Hello User!\nThe host " 
         				+ user.getName() + " " + user.getSurname() + " (" + user.getEmail() 
         				+") accepted your reservation of '" + apartment.getName() + "' (address: " 
         				+ apartmentPK.getStreet() + " " + apartmentPK.getBuildingNumber() 
@@ -89,10 +89,10 @@ public class BookingConfirmationServlet extends HttpServlet {
 				
 				for(Reservation r : bookingReservations) {
             			
-//            		DataAccess.removeReservation(r);
+            		DataAccess.removeReservation(r);
 				}
 				
-				textMessage ="#" + bookingReservations.get(0).hashCode() + "\n\nHello User!\nThe host " 
+				textMessage ="Hello User!\nThe host " 
         				+ user.getName() + " " + user.getSurname() + " (" + user.getEmail() 
         				+") declined your reservation of '" + apartment.getName() + "' (address: " 
         				+ apartmentPK.getStreet() + " " + apartmentPK.getBuildingNumber() 
@@ -103,10 +103,8 @@ public class BookingConfirmationServlet extends HttpServlet {
 			}
 				
 			Message reservationMessage = Message.createNewMessage(DataAccess.getUserByEmail("admin"), user, textMessage);
-//    		MessageLogic.sendMessage(reservationMessage);
+    		MessageLogic.sendMessage(reservationMessage);
     		
-//    		RequestDispatcher dispatcher = request.getRequestDispatcher("/messages");
-//			dispatcher.forward(request, response);
 			response.sendRedirect("/airbnb/messages");
 		}
 }

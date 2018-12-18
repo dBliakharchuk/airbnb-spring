@@ -25,6 +25,7 @@ function conversationSelected(email, selectedUser) {
 			var div = document.createElement('div');
 			if(String(result[i].sender.email) == String(email)){
 				div.className = "convesations-message message-send";
+
 			}
 			else{
 				div.className = "convesations-message message-recived";
@@ -44,6 +45,7 @@ function conversationSelected(email, selectedUser) {
 						document.getElementById("confirmationField").innerHTML = confirmationStatus;
 						}
 					document.getElementById("hiddenForm").submit();//your code here
+
 				}
 				
 				

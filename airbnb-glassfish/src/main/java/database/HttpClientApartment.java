@@ -1,9 +1,11 @@
 package database;
 
-import java.lang.reflect.Type;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type; 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.*;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -21,6 +23,7 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientHandlerException;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 
@@ -34,145 +37,181 @@ public class HttpClientApartment {
 
     private static String apartmentServiceUrl = "http://127.0.0.1:8084/apartment";
     
-    /*Host in apartment = null but we can get email of host from ApartmentPK*/
     public static List<Apartment> getAllApartments() {
-        Client client = Client.create();
-        WebResource webResource = client.resource(apartmentServiceUrl);
-        ClientResponse response = webResource
-        		.accept("application/json")
-                .type("application/json")
-                .get(ClientResponse.class);
-        
-        String result = response.getEntity(String.class);
-        return customGson.fromJson(result, new TypeToken<List<Apartment>>(){}.getType());
+    	String result = null;
+    	try {
+	    	Client client = Client.create();
+	        WebResource webResource = client.resource(apartmentServiceUrl);
+	        ClientResponse response = webResource
+	        		.accept("application/json")
+	                .type("application/json")
+	                .get(ClientResponse.class);
+	        
+	        result = response.getEntity(String.class);
+	    } catch (ClientHandlerException ex) {
+	    	System.out.println("HttpClientApartment exception: there was problem with connection");
+	    	return new ArrayList<Apartment>();
+	    }
+    	return customGson.fromJson(result, new TypeToken<List<Apartment>>(){}.getType());
     }
     
     
     public static Apartment getApartmentById(ApartmentPK apartmentId) {
-    	Client client = Client.create();
-        WebResource webResource = client.resource(apartmentServiceUrl + "/getById");
-        ClientResponse response = webResource
-        		.accept("application/json")
-                .type("application/json")
-                .post(ClientResponse.class, customGson.toJson(apartmentId));
-
-        String result = response.getEntity(String.class);
+    	String result = null;
+    	
+    	try {
+    		Client client = Client.create();
+	        WebResource webResource = client.resource(apartmentServiceUrl + "/getById");
+	        ClientResponse response = webResource
+	        		.accept("application/json")
+	                .type("application/json")
+	                .post(ClientResponse.class, customGson.toJson(apartmentId));
+	
+	        result = response.getEntity(String.class);
+    	} catch (ClientHandlerException ex) {
+	    	System.out.println("HttpClientApartment exception: there was problem with connection");
+	    	return null;
+	    }
+	    	
         return customGson.fromJson(result, Apartment.class);
     }
     
     public static List<Apartment> getApartmentByName(String name) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(apartmentServiceUrl);
-        ClientResponse response = webResource
-                .queryParam("name", name)
-                .accept("application/json")
-                .type("application/json")
-                .get(ClientResponse.class);
+        String result = null;
+    	try {
+	    	Client client = Client.create();
+	        WebResource webResource = client.resource(apartmentServiceUrl);
+	        ClientResponse response = webResource
+	                .queryParam("name", name)
+	                .accept("application/json")
+	                .type("application/json")
+	                .get(ClientResponse.class);
 
-        String result = response.getEntity(String.class);
+	        result = response.getEntity(String.class);
+    	} catch (ClientHandlerException ex) {
+	    	System.out.println("HttpClientApartment exception: there was problem with connection");
+	    	return new ArrayList<Apartment>();
+	    }
+    	
         return customGson.fromJson(result, new TypeToken<List<Apartment>>(){}.getType());
     }
     
     public static List<Apartment> getApartmentByCity(String city) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(apartmentServiceUrl);
-        ClientResponse response = webResource
-                .queryParam("city", city)
-                .accept("application/json")
-                .type("application/json")
-                .get(ClientResponse.class);
-
-        String result = response.getEntity(String.class);
+        String result = null;
+        try {
+	    	Client client = Client.create();
+	        WebResource webResource = client.resource(apartmentServiceUrl);
+	        ClientResponse response = webResource
+	                .queryParam("city", city)
+	                .accept("application/json")
+	                .type("application/json")
+	                .get(ClientResponse.class);
+	        result = response.getEntity(String.class);
+        } catch (ClientHandlerException ex) {
+		    	System.out.println("HttpClientApartment exception: there was problem with connection");
+		    	return new ArrayList<Apartment>();
+		  }
+        
         return customGson.fromJson(result, new TypeToken<List<Apartment>>(){}.getType());
     }
     
     public static List<Apartment> getApartmentByHost(String host) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(apartmentServiceUrl);
-        ClientResponse response = webResource
-                .queryParam("host", host)
-                .accept("application/json")
-                .type("application/json")
-                .get(ClientResponse.class);
+        String result = null;
+        
+        try {
+	    	Client client = Client.create();
+	        WebResource webResource = client.resource(apartmentServiceUrl);
+	        ClientResponse response = webResource
+	                .queryParam("host", host)
+	                .accept("application/json")
+	                .type("application/json")
+	                .get(ClientResponse.class);
+	        result = response.getEntity(String.class);
+        } catch (ClientHandlerException ex) {
+	    	System.out.println("HttpClientApartment exception: there was problem with connection");
+	    	return new ArrayList<Apartment>();
+        }
 
-        String result = response.getEntity(String.class);
         return customGson.fromJson(result, new TypeToken<List<Apartment>>(){}.getType());
     }
     
     public static List<Apartment> getApartmentByCounry(String country) {
-        Client client = Client.create();
-        WebResource webResource = client.resource(apartmentServiceUrl);
-        ClientResponse response = webResource
-                .queryParam("country", country)
-                .accept("application/json")
-                .type("application/json")
-                .get(ClientResponse.class);
-
-        String result = response.getEntity(String.class);
+        String result = null;
+        try {
+	    	Client client = Client.create();
+	        WebResource webResource = client.resource(apartmentServiceUrl);
+	        ClientResponse response = webResource
+	                .queryParam("country", country)
+	                .accept("application/json")
+	                .type("application/json")
+	                .get(ClientResponse.class);
+	        
+	        result = response.getEntity(String.class);
+        } catch (ClientHandlerException ex) {
+	    	System.out.println("HttpClientApartment exception: there was problem with connection");
+	    	return new ArrayList<Apartment>();
+        }
         return customGson.fromJson(result, new TypeToken<List<Apartment>>(){}.getType());
     }
     
-    public static boolean createApartment(Apartment apartment) {
-    	Client client = Client.create();
-    	WebResource webResource = client.resource(apartmentServiceUrl);
-    	ClientResponse response = webResource
-    			.accept("application/json")
-    			.type("application/json")
-    			.post(ClientResponse.class, customGson.toJson(apartment));
-    	
-    	String result = response.getEntity(String.class);
+    public static boolean createApartment(Apartment apartment) {    	
+    	/*apartment.setPicture(null);*/
+    	String result = null;
+    	try {
+	    	Client client = Client.create();
+	    	WebResource webResource = client.resource(apartmentServiceUrl);
+	    	ClientResponse response = webResource
+	    			.accept("application/json")
+	    			.type("application/json")
+	    			.post(ClientResponse.class, customGson.toJson(apartment));
+	    	
+	    	result = response.getEntity(String.class);
+    	} catch (ClientHandlerException ex) {
+	    	System.out.println("HttpClientApartment exception: there was problem with connection");
+	    	return false;
+        }
     	return customGson.fromJson(result, Boolean.class);
     }
     
     public static boolean updateApartment(Apartment apartment) {
-    	Client client = Client.create();
-    	WebResource webResource = client.resource(apartmentServiceUrl);
-    	ClientResponse response = webResource
-    			.accept("application/json")
-    			.type("application/json")
-    			.put(ClientResponse.class, customGson.toJson(apartment));
-    	
-    	String result = response.getEntity(String.class);
+    	/*apartment.setPicture(null);*/
+    	String result = null;
+    	try { 
+	    	Client client = Client.create();
+	    	WebResource webResource = client.resource(apartmentServiceUrl);
+	    	ClientResponse response = webResource
+	    			.accept("application/json")
+	    			.type("application/json")
+	    			.put(ClientResponse.class, customGson.toJson(apartment));
+	    	
+	    	result = response.getEntity(String.class);
+    	} catch (ClientHandlerException ex) {
+	    	System.out.println("HttpClientApartment exception: there was problem with connection");
+	    	return false;
+        }
     	return customGson.fromJson(result, Boolean.class);
     }
     
     public static boolean removeApartment(Apartment apartment) {
-    	Client client = Client.create();
-    	WebResource webResource = client.resource(apartmentServiceUrl);
-    	ClientResponse response = webResource
-    			.accept("application/json")
-    			.type("application/json")
-    			.delete(ClientResponse.class, customGson.toJson(apartment));
+    	String result = null;
     	
-    	String result = response.getEntity(String.class);
+    	try {
+	    	apartment.setPicture(null);
+	    	Client client = Client.create();
+	    	WebResource webResource = client.resource(apartmentServiceUrl);
+	    	ClientResponse response = webResource
+	    			.accept("application/json")
+	    			.type("application/json")
+	    			.delete(ClientResponse.class, customGson.toJson(apartment));
+	    	
+	    	result = response.getEntity(String.class);
+    	} catch (ClientHandlerException ex) {
+	    	System.out.println("HttpClientApartment exception: there was problem with connection");
+	    	return false;
+        }
     	return customGson.fromJson(result, Boolean.class);
     }
         
-    
-    
-    public static void main(String []args) {
-    	
-    	System.out.println("List of apartment***************************");
-    	List<Apartment> listAp = getAllApartments();
-    	System.out.println(listAp.size());
-    	Apartment newAp = listAp.get(0);
-    	ApartmentPK idAp = newAp.getId();
-    	for(Apartment ap:listAp) {
-   		 System.out.println(ap);
-   		 System.out.println("------------------------------------");
-   	 }
-    	newAp.setCity("Rivne");
-    	
-    	System.out.println(createApartment(newAp));
-    	listAp = getAllApartments();
-    	System.out.println(listAp.size());
-    	for(Apartment ap:listAp) {
-    		 System.out.println(ap);
-    		 System.out.println("------------------------------------");
-    	 }
-    	System.out.println("*****************get Apartment by id");
-    	System.out.println(getApartmentById(idAp));
-    }
 
   
 

@@ -68,40 +68,11 @@ public class DataAccess
 	
 	public static boolean createMessage(Message message) {
 		Message messageReturned = HttpClientMessage.createMessage(message);
-		System.out.println("Returne message from API" +messageReturned);
 		if(messageReturned != null)
 			return true;
 		
-		
 		return false;
 	}
-	
-	public static boolean removeMessage(Message message) {
-		EntityManager manager = managerFactory.createEntityManager();
-		Message managed = null;
-		try {
-			manager.getTransaction().begin();
-			managed = manager.find(Message.class, message.getId());
-			manager.remove(managed);
-			manager.getTransaction().commit();
-		} catch(Exception ex) {
-			try {
-				if (manager.getTransaction().isActive()) {
-					manager.getTransaction().rollback();
-				}
-			} catch (Exception e) {
-				ex.printStackTrace();
-				e.printStackTrace();
-			}
-			manager.close();
-			return false;
-		}
-		
-		manager.close();
-		return true;
-	}
-	
-	
 	
 	
 	

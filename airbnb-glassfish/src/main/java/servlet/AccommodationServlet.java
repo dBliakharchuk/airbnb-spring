@@ -62,10 +62,12 @@ public class AccommodationServlet extends HttpServlet {
 		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 		 */
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-			request.getSession().setAttribute("selectedApartment", DataAccess.getApartmentById(new ApartmentPK(request.getParameter("apartmentHost"),
-					request.getParameter("apartmentBuildingNumber"), request.getParameter("apartmentStreet"), request.getParameter("apartmentFlatNumber"), 
-					request.getParameter("apartmentCity"))));
+			
+			if(request.getParameter("apartmentBuildingNumber") != null) {	
+				request.getSession().setAttribute("selectedApartment", DataAccess.getApartmentById(new ApartmentPK(request.getParameter("apartmentHost"),
+						request.getParameter("apartmentBuildingNumber"), request.getParameter("apartmentStreet"), request.getParameter("apartmentFlatNumber"), 
+						request.getParameter("apartmentCity"))));
+			}
 					
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/accommodation.jsp");
 			
